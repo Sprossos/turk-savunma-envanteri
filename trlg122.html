@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRLG-122 Lazer Güdümlü Roket</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+  padding:70px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:44px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:40px auto;
+}
+
+.back{
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  margin-bottom:25px;
+}
+
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.box h2{
+  color:#93c5fd;
+  margin-bottom:12px;
+}
+
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.spec-card{
+  background:#0f172a;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.spec-card h3{
+  color:#60a5fa;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 10px 24px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+  background:#0f172a;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+td{
+  padding:10px;
+  border-bottom:1px solid #475569;
+  vertical-align:top;
+}
+
+tr:last-child td{
+  border-bottom:none;
+}
+
+td:first-child{
+  color:#cbd5e1;
+  width:40%;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111827;
+  margin-top:50px;
+  color:#cbd5e1;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:60px;
+  color:white;
+  cursor:pointer;
+  user-select:none;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(0,0,0,0.2);
+}
+
+.arrow:hover{
+  color:#60a5fa;
+  background:rgba(37,99,235,0.25);
+}
+
+.prev{
+  left:30px;
+}
+
+.next{
+  right:30px;
+}
+
+@media(max-width:900px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .arrow{
+    font-size:40px;
+    padding:10px;
+  }
+
+  .prev{
+    left:10px;
+  }
+
+  .next{
+    right:10px;
+  }
+
+  td:first-child{
+    width:46%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TRLG-122</h1>
+  <p>122 mm Lazer Güdümlü Roket</p>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      TRLG-122, 122 mm sınıfındaki çok namlulu roketatar sistemlerinden atılabilen, lazer güdüm
+      kabiliyeti kazanmış hassas roket mühimmatıdır. Özellikle yüksek öncelikli hedeflere karşı
+      hassas ve etkili ateş gücü sağlamak amacıyla geliştirilmiştir.
+    </p>
+
+    <br>
+
+    <p>
+      Sistem, klasik 122 mm roket altyapısını korurken terminal safhada lazer arayıcı başlıkla
+      hedefe yönelerek nokta vuruş kabiliyeti sunar. Bu sayede sabit hedeflerin yanı sıra lazerle
+      işaretlenebilen hassas hedeflere karşı da etkili hale gelir.
+    </p>
+
+    <br>
+
+    <p>
+      TRLG-122; ileri gözetleyici unsurlar, kara birlikleri veya hava platformları tarafından
+      işaretlenen hedeflere karşı kullanılabilecek yapıda olup, düşük istenmeyen etki ve yüksek
+      doğruluk gerektiren görevlerde önemli bir çözüm sunar.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Temel Özellikler</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Menzil</h3>
+        <p>13–30 km</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Katalog Menzili</h3>
+        <p>8–28 km</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Çap</h3>
+        <p>122 mm</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Ağırlık</h3>
+        <p>76–78 kg</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Uzunluk</h3>
+        <p>3.3 m</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Hassasiyet</h3>
+        <p>≤ 2 m CEP</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Teknik Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Mühimmat Tipi</td>
+        <td>122 mm lazer güdümlü roket</td>
+      </tr>
+
+      <tr>
+        <td>Adı</td>
+        <td>TRLG-122</td>
+      </tr>
+
+      <tr>
+        <td>Görev Alanı</td>
+        <td>Yüksek öncelikli hedeflere hassas ve etkili ateş desteği</td>
+      </tr>
+
+      <tr>
+        <td>Çap</td>
+        <td>122 mm</td>
+      </tr>
+
+      <tr>
+        <td>Uzunluk</td>
+        <td>3.3 m</td>
+      </tr>
+
+      <tr>
+        <td>Füze Ağırlığı</td>
+        <td>76 kg (ürün sayfası) / 78 kg (2024 katalog)</td>
+      </tr>
+
+      <tr>
+        <td>Menzil</td>
+        <td>13–30 km (ürün sayfası) / 8–28 km (2024 katalog)</td>
+      </tr>
+
+      <tr>
+        <td>Güdüm</td>
+        <td>ANS + LAB (Ataletsel Navigasyon Sistemi + Lazer Arayıcı Başlık)</td>
+      </tr>
+
+      <tr>
+        <td>Lazer Uyumu</td>
+        <td>Stanag 3733 uyumlu lazer arayıcı başlık</td>
+      </tr>
+
+      <tr>
+        <td>Güdüm Mantığı</td>
+        <td>Ataletsel güdümle hedef bölgesine yaklaşma, terminal fazda lazer arayıcıyla nokta vuruş</td>
+      </tr>
+
+      <tr>
+        <td>Kontrol</td>
+        <td>Elektromekanik tahrik sistemli aerodinamik kontrol</td>
+      </tr>
+
+      <tr>
+        <td>Yakıt Tipi</td>
+        <td>Kompozit katı yakıt</td>
+      </tr>
+
+      <tr>
+        <td>Harp Başlığı Tipi</td>
+        <td>Tahrip + çelik bilyeli</td>
+      </tr>
+
+      <tr>
+        <td>Harp Başlığı Ağırlığı</td>
+        <td>13.5 kg</td>
+      </tr>
+
+      <tr>
+        <td>Harp Başlığı Etki Yarıçapı</td>
+        <td>≥ 40 m</td>
+      </tr>
+
+      <tr>
+        <td>Tapa Tipi</td>
+        <td>Çarpma ve yaklaşmalı</td>
+      </tr>
+
+      <tr>
+        <td>Raf Ömrü</td>
+        <td>10 yıl</td>
+      </tr>
+
+      <tr>
+        <td>Vuruş Hassasiyeti</td>
+        <td>≤ 2 m CEP</td>
+      </tr>
+
+      <tr>
+        <td>Atış Platformu</td>
+        <td>122 mm çok namlulu roketatar sistemleri</td>
+      </tr>
+
+      <tr>
+        <td>Sistem Yapısı</td>
+        <td>Taşıma, depolama ve atış için pod yapısı</td>
+      </tr>
+
+      <tr>
+        <td>Öne Çıkan Özellik</td>
+        <td>122 mm roket sınıfında, lazer işaretli hedeflere santimetre düzeyinde hassasiyet yaklaşımı sunan yerli çözüm</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Sistem ve Operasyonel Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Atışa Hazırlık</td>
+        <td>Kısa sürede atışa hazır hale gelebilme</td>
+      </tr>
+
+      <tr>
+        <td>Doğruluk</td>
+        <td>Pin-point accuracy / nokta hassasiyetinde vuruş</td>
+      </tr>
+
+      <tr>
+        <td>İstenmeyen Etki</td>
+        <td>Düşük collateral damage yaklaşımı</td>
+      </tr>
+
+      <tr>
+        <td>Hassas Taarruz</td>
+        <td>Precision strike capability</td>
+      </tr>
+
+      <tr>
+        <td>Hedef İşaretleme</td>
+        <td>Yerden veya havadan lazer işaretleme ile hedef angajmanı</td>
+      </tr>
+
+      <tr>
+        <td>Görev Koşulları</td>
+        <td>Gece/gündüz ve farklı arazi koşullarında kullanıma uygun operasyon konsepti</td>
+      </tr>
+
+      <tr>
+        <td>Kullanım Alanı</td>
+        <td>Zaman kritik ve hassas vurulması gereken hedefler</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Hedef Seti</h2>
+
+    <table>
+      <tr>
+        <td>Hareketli Hedefler</td>
+        <td>Lazerle işaretlenebilen hareketli hedefler</td>
+      </tr>
+
+      <tr>
+        <td>Zırhlı / Hafif Zırhlı Araçlar</td>
+        <td>Hassas vuruş gerektiren kara hedefleri</td>
+      </tr>
+
+      <tr>
+        <td>Radar ve Sensörler</td>
+        <td>Radar mevzileri ve sensör sistemleri</td>
+      </tr>
+
+      <tr>
+        <td>Komuta Merkezleri</td>
+        <td>Kritik komuta-kontrol unsurları</td>
+      </tr>
+
+      <tr>
+        <td>Fırsat Hedefleri</td>
+        <td>Görev sırasında lazerle işaretlenebilen anlık hedefler</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Görseller</h2>
+
+    <div class="gallery">
+      <img src="images/trlg122_1.jpg" alt="TRLG-122 görsel 1" onclick="openImg(0)">
+      <img src="images/trlg122_2.jpg" alt="TRLG-122 görsel 2" onclick="openImg(1)">
+      <img src="images/trlg122_3.jpg" alt="TRLG-122 görsel 3" onclick="openImg(2)">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+TRLG-122 Lazer Güdümlü Roket • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="arrow prev" onclick="prevImg()">❮</span>
+  <img id="lightbox-img" alt="Büyütülmüş TRLG-122 görseli">
+  <span class="arrow next" onclick="nextImg()">❯</span>
+</div>
+
+<script>
+const images = [
+  "images/trlg122_1.jpg",
+  "images/trlg122_2.jpg",
+  "images/trlg122_3.jpg"
+];
+
+let index = 0;
+
+function openImg(i){
+  index = i;
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function nextImg(){
+  index++;
+  if(index >= images.length){
+    index = 0;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function prevImg(){
+  index--;
+  if(index < 0){
+    index = images.length - 1;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    this.style.display = "none";
+  }
+}
+
+document.addEventListener("keydown", function(e){
+  const lightbox = document.getElementById("lightbox");
+  if(lightbox.style.display === "flex"){
+    if(e.key === "ArrowRight") nextImg();
+    if(e.key === "ArrowLeft") prevImg();
+    if(e.key === "Escape") lightbox.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

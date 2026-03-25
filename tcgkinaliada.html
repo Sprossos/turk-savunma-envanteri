@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCG Kınalıada (F-514)</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+  padding:60px 20px 40px;
+  text-align:center;
+}
+
+header h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+header p{
+  max-width:900px;
+  margin:0 auto;
+  color:#dbeafe;
+  font-size:18px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:35px auto;
+}
+
+.back-link{
+  display:inline-block;
+  margin-bottom:24px;
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.info-box{
+  background:#1e293b;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:26px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.info-box h2{
+  color:#93c5fd;
+  margin-bottom:12px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-bottom:30px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:18px;
+  cursor:pointer;
+  transition:transform .25s;
+  box-shadow:0 10px 24px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+.spec-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#0f172a;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.spec-table td{
+  padding:10px;
+  border-bottom:1px solid #475569;
+  vertical-align:top;
+}
+
+.spec-table tr:last-child td{
+  border-bottom:none;
+}
+
+.spec-table td:first-child{
+  color:#cbd5e1;
+  width:38%;
+  font-weight:600;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+  background:#111827;
+  color:#cbd5e1;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.96);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  backdrop-filter:blur(6px);
+}
+
+.lightbox img{
+  max-width:95vw;
+  max-height:95vh;
+  border-radius:12px;
+}
+
+.lightbox-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:60px;
+  cursor:pointer;
+  padding:10px 18px;
+  background:rgba(0,0,0,0.25);
+  border-radius:10px;
+  user-select:none;
+}
+
+.lightbox-prev{left:30px;}
+.lightbox-next{right:30px;}
+
+@media(max-width:900px){
+  .gallery{grid-template-columns:1fr;}
+  .spec-table td:first-child{width:46%;}
+  .lightbox-arrow{font-size:40px;}
+  .lightbox-prev{left:10px;}
+  .lightbox-next{right:10px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TCG Kınalıada (F-514)</h1>
+  <p>MİLGEM Ada Sınıfı korvetlerin dördüncü ve son gemisi.</p>
+</header>
+
+<div class="container">
+
+  <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="info-box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      TCG Kınalıada (F-514), Türkiye’nin milli savaş gemisi programı olan MİLGEM kapsamında geliştirilen
+      Ada Sınıfı korvetlerin dördüncü ve son gemisidir. Platform, sınıfın olgunlaşmış örneği olarak
+      denizaltı savunma harbi, suüstü harbi, deniz gözetleme, keşif-karakol ve kıyı güvenliği görevlerinde
+      kullanılmak üzere tasarlanmıştır.
+    </p>
+
+    <br>
+
+    <p>
+      Ada sınıfı korvetler; düşük radar görünürlüğü, gelişmiş savaş yönetim sistemi, helikopter konuşlandırma
+      kabiliyeti, modern radar ve sonar sistemleri ile Türk Deniz Kuvvetleri için çok rollü, milli savaş gemisi
+      yaklaşımının temel platformlarıdır. Kınalıada da bu sınıfın son gemisi olarak sınıf içi kabiliyetlerin
+      en gelişmiş örneklerinden biri kabul edilmektedir.
+    </p>
+
+    <br>
+
+    <p>
+      Platform; hava, suüstü ve sualtı tehditlerinin tespiti, sınıflandırılması, tanımlanması ve imhası
+      yanında münhasır ekonomik bölge gözetleme, kritik altyapı koruma ve deniz karakol görevlerinde
+      kullanılabilecek şekilde yapılandırılmıştır.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/kinaliada1.jpg" alt="TCG Kınalıada görsel 1" onclick="resimAc(0)">
+    <img src="images/kinaliada2.jpg" alt="TCG Kınalıada görsel 2" onclick="resimAc(1)">
+    <img src="images/kinaliada3.jpg" alt="TCG Kınalıada görsel 3" onclick="resimAc(2)">
+  </div>
+
+  <div class="info-box">
+    <h2>Teknik Özellikler</h2>
+
+    <table class="spec-table">
+
+      <tr><td>Gemi Sınıfı</td><td>Ada Sınıfı Korvet</td></tr>
+      <tr><td>Gemi Adı</td><td>TCG Kınalıada</td></tr>
+      <tr><td>Borda Numarası</td><td>F-514</td></tr>
+      <tr><td>Program</td><td>MİLGEM</td></tr>
+      <tr><td>Sınıftaki Yeri</td><td>Ada Sınıfı’nın dördüncü ve son gemisi</td></tr>
+
+      <tr><td>Omurga Kızağa Konuluşu</td><td>8 Ekim 2015</td></tr>
+      <tr><td>Denize İndirilme</td><td>3 Temmuz 2017</td></tr>
+      <tr><td>Hizmete Giriş</td><td>29 Eylül 2019</td></tr>
+
+      <tr><td>Görev Profili</td><td>Denizaltı savunma harbi, keşif-karakol, deniz gözetleme, suüstü harbi, kıyı ve kritik altyapı koruma, MEB devriyesi</td></tr>
+      <tr><td>Temel Uzmanlık</td><td>Denizaltı savunma harbi (ASW)</td></tr>
+      <tr><td>İkincil Roller</td><td>Suüstü harbi, refakat, deniz karakol, gözetleme ve caydırıcılık görevleri</td></tr>
+
+      <tr><td>Boy</td><td>99,56 m</td></tr>
+      <tr><td>Genişlik</td><td>14,40 m</td></tr>
+      <tr><td>Draft</td><td>Yaklaşık 3,9 m</td></tr>
+      <tr><td>Deplasman</td><td>Yaklaşık 2.400 ton</td></tr>
+
+      <tr><td>Tahrik Sistemi</td><td>RENK CODAG (Combined Diesel and Gas)</td></tr>
+      <tr><td>Şaft Sayısı</td><td>2</td></tr>
+      <tr><td>Gaz Türbini</td><td>1 adet gaz türbini</td></tr>
+      <tr><td>Dizel Motor</td><td>2 adet dizel motor</td></tr>
+      <tr><td>Sevk Düzeni</td><td>Ekonomik seyirde dizel, yüksek süratte gaz türbini destekli birleşik tahrik</td></tr>
+
+      <tr><td>Ekonomik Hız</td><td>15 knot sınıfı</td></tr>
+      <tr><td>Azami Hız</td><td>30 knot sınıfı</td></tr>
+      <tr><td>Menzil</td><td>3.500 deniz mili @ 15 knot</td></tr>
+      <tr><td>Dayanım</td><td>21 gün lojistik destekle, yaklaşık 10 gün otonom</td></tr>
+
+      <tr><td>Mürettebat</td><td>93</td></tr>
+      <tr><td>Azami Barındırma</td><td>106 kişiye kadar</td></tr>
+      <tr><td>RHIB</td><td>2 adet RHIB</td></tr>
+
+      <tr><td>Helikopter Platformu</td><td>Mevcut</td></tr>
+      <tr><td>Hangar</td><td>Mevcut</td></tr>
+      <tr><td>Helikopter Kapasitesi</td><td>S-70B Seahawk ASW helikopteri</td></tr>
+      <tr><td>İHA Desteği</td><td>İHA konuşlandırma ve görev desteği</td></tr>
+      <tr><td>Havacılık Altyapısı</td><td>Mühimmat depolama, JP-5 yakıt, HIRF ve bakım destek altyapısı</td></tr>
+
+      <tr><td>Gövde Tasarımı</td><td>Düşük radar kesit alanlı stealth gövde formu</td></tr>
+      <tr><td>Akustik İz Azaltma</td><td>ASW görevleri için azaltılmış akustik iz yaklaşımı</td></tr>
+      <tr><td>Manyetik İz Azaltma</td><td>Degaussing sistemi</td></tr>
+      <tr><td>IR İz Yönetimi</td><td>Kızılötesi iz azaltıcı tasarım yaklaşımı</td></tr>
+
+      <tr><td>Savaş Yönetim Sistemi</td><td>ADVENT (sınıfın son gemisinde GENESIS’in gelişmiş sürümü)</td></tr>
+      <tr><td>Arama Radarı</td><td>SMART-S Mk2 3B radar</td></tr>
+      <tr><td>Atış Kontrol Radarı</td><td>STING EO Mk2 sınıfı atış kontrol sensörü</td></tr>
+      <tr><td>Sonar</td><td>Hull Mounted Sonar / TBT-01 Yakamoz sınıfı sistem</td></tr>
+      <tr><td>Elektronik Harp</td><td>ASELSAN ARES-2N ve ilgili elektronik destek / karşı tedbir altyapısı</td></tr>
+      <tr><td>Torpido Savunma</td><td>Sea Sentor Surface Ship Torpedo Defense System sınıfı altyapı</td></tr>
+      <tr><td>Platform Yönetim Sistemi</td><td>UniMACS 3000 IPMS</td></tr>
+      <tr><td>Seyrüsefer Sistemleri</td><td>ECPINS-W, GPS, ECDIS/WECDIS, X-band radar</td></tr>
+      <tr><td>Taktik Veri Bağı</td><td>Link 11 / Link 16 sınıfı entegrasyon</td></tr>
+
+      <tr><td>Ana Top</td><td>1 × 76 mm OTO Melara Super Rapid</td></tr>
+      <tr><td>Yakın Hava Savunma</td><td>21 hücreli RAM lançeri</td></tr>
+      <tr><td>İkincil Silahlar</td><td>2 × 12,7 mm ASELSAN STAMP</td></tr>
+      <tr><td>Gemi Savar Füze</td><td>8 × ATMACA</td></tr>
+      <tr><td>Torpido Sistemi</td><td>2 × 324 mm Mk.32 üçlü lançer</td></tr>
+      <tr><td>Torpido Mühimmatı</td><td>Mk.46 sınıfı torpido</td></tr>
+
+      <tr><td>Silah Profili</td><td>Hava, suüstü ve sualtı tehditlerine karşı çok katmanlı angajman</td></tr>
+      <tr><td>Sınıf İçi Farklılık</td><td>Son gemi olması nedeniyle ADVENT ve ATMACA gibi daha yeni milli sistem entegrasyonlarıyla öne çıkar</td></tr>
+      <tr><td>Program Önemi</td><td>Ada sınıfı serisinin tamamlanmasını sağlayan ve sonraki İ sınıfı tasarıma geçişte tecrübe kazandıran korvet</td></tr>
+      <tr><td>Öne Çıkan Özellik</td><td>Düşük görünürlük, güçlü ASW sensörleri, ADVENT savaş yönetim sistemi ve ATMACA entegrasyonuyla Ada sınıfının en gelişmiş gemisi</td></tr>
+
+    </table>
+  </div>
+
+</div>
+
+<footer>
+TCG Kınalıada (F-514) • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-arrow lightbox-prev" onclick="onceki()">❮</div>
+  <img id="lightbox-img" alt="Büyütülmüş TCG Kınalıada görseli">
+  <div class="lightbox-arrow lightbox-next" onclick="sonraki()">❯</div>
+</div>
+
+<script>
+const resimler = [
+  "images/kinaliada1.jpg",
+  "images/kinaliada2.jpg",
+  "images/kinaliada3.jpg"
+];
+
+let aktif = 0;
+
+function resimAc(i){
+  aktif = i;
+  document.getElementById("lightbox-img").src = resimler[i];
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function sonraki(){
+  aktif++;
+  if(aktif >= resimler.length) aktif = 0;
+  document.getElementById("lightbox-img").src = resimler[aktif];
+}
+
+function onceki(){
+  aktif--;
+  if(aktif < 0) aktif = resimler.length - 1;
+  document.getElementById("lightbox-img").src = resimler[aktif];
+}
+
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    this.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

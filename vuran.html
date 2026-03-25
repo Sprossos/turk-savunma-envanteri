@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMC VURAN</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BMC VURAN</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        VURAN, BMC tarafından geliştirilen 4x4 çok maksatlı zırhlı araçtır. Araç, yüksek koruma,
+        taşıma kapasitesi ve hareket kabiliyetini aynı platformda birleştirmek amacıyla tasarlanmıştır.
+      </p>
+      <br>
+      <p>
+        BMC’nin resmî tanıtımında VURAN; personel taşıma, havan taşıyıcı ve çok namlulu roketatar gibi
+        farklı görev rollerine uyarlanabilen bir araç ailesi olarak gösterilmektedir.
+      </p>
+      <br>
+      <p>
+        V şekilli monokok gövde yapısı, balistik koruma, mayın koruması ve EYP koruması ile özellikle
+        riskli operasyon bölgelerinde personel emniyetini ön planda tutan bir tasarıma sahiptir.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/vuran1.jpg" alt="BMC VURAN görsel 1" onclick="resimAc(0)">
+      <img src="images/vuran2.jpg" alt="BMC VURAN görsel 2" onclick="resimAc(1)">
+      <img src="images/vuran3.jpg" alt="BMC VURAN görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">4x4 Çok Maksatlı Zırhlı Araç</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">BMC</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Personel Kapasitesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">9</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Araç Ağırlığı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">21.000 kg</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uzunluk</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">6810 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Genişlik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2620 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yükseklik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2660 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">RCWS ile Yükseklik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">3500 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor Markası</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Cummins ISL 9E3 375 PS</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor Tipi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Turbo, intercooler, dizel</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Güç</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">375 PS (275 kW) @ 2100 rpm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Tork</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">1550 Nm @ 1100–1400 rpm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Fren Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Disk fren, tam havalı çift devre servis freni, hava kumandalı yaylı park freni, ABS</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Gövde Tipi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">V-shape monokok</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Koruma Standardı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">STANAG 4569 / DIN EN 1522 / EN 1063</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Balistik Koruma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Var</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mayın Koruması</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Var</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">EYP Koruması</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Var</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Görev Varyantları</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">4x4 personel aracı, 4x4 ÇNRA, 4x4 havan taşıyıcı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Öne Çıkan Özellik</td>
+          <td style="padding:10px;">Yüksek taşıma kapasitesini güçlü koruma ve modüler görev yapısıyla birleştiren 4x4 zırhlı platform</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    BMC VURAN detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş BMC VURAN görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/vuran1.jpg",
+      "images/vuran2.jpg",
+      "images/vuran3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index){
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim(){
+      aktifResim++;
+      if(aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(){
+      aktifResim--;
+      if(aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e){
+      if(e.target.id === "lightbox"){
+        this.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
