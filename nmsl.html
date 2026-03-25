@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMS-L 4x4</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .spec-table td {
+      padding: 10px;
+      border-bottom: 1px solid #475569;
+      vertical-align: top;
+    }
+
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec-table td:first-child {
+      color: #cbd5e1;
+      width: 36%;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-table td:first-child {
+        width: 44%;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NMS-L 4x4</h1>
+    <p>Nurol Makina tarafından geliştirilen hafif sınıf, modüler ve hava taşınabilir 4x4 taktik zırhlı araç.</p>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        NMS-L 4x4, Nurol Makina’nın hafif sınıf taktik tekerlekli zırhlı aracıdır. Araç; silah sistemi taşıma,
+        keşif, devriye ve farklı görev ihtiyaçları için modüler şekilde tasarlanmıştır.
+      </p>
+      <br>
+      <p>
+        Ürün tanıtımında güvenlik, modülerlik ve farklı coğrafyalarda görev icrası ön plana çıkarılmaktadır.
+        NMS-L, hafif yapısına rağmen yüksek koruma seviyesi sunmayı hedefleyen yeni nesil bir platformdur.
+      </p>
+      <br>
+      <p>
+        Nurol Makina kataloglarında araç; ölçeklendirilebilir zırh yapısı, bağımsız süspansiyon, run-flat
+        lastikler, merkezi lastik şişirme sistemi ve helikopterle askıda taşınabilme gibi yeteneklerle öne çıkar.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/nmsl1.jpg" alt="NMS-L 4x4 görsel 1" onclick="resimAc(0)">
+      <img src="images/nmsl2.jpg" alt="NMS-L 4x4 görsel 2" onclick="resimAc(1)">
+      <img src="images/nmsl3.jpg" alt="NMS-L 4x4 görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+
+      <table class="spec-table">
+        <tr>
+          <td>Araç Sınıfı</td>
+          <td>4x4 hafif taktik zırhlı araç</td>
+        </tr>
+        <tr>
+          <td>Üretici</td>
+          <td>Nurol Makina</td>
+        </tr>
+        <tr>
+          <td>Araç Ailesi</td>
+          <td>NMS-L 4x4 Tactical Light Armored Vehicle</td>
+        </tr>
+        <tr>
+          <td>Görev Profili</td>
+          <td>Silah sistemi taşıma, keşif, devriye ve çok amaçlı taktik görevler</td>
+        </tr>
+        <tr>
+          <td>Personel Kapasitesi</td>
+          <td>5 kişiye kadar</td>
+        </tr>
+        <tr>
+          <td>Kapı Düzeni</td>
+          <td>4 yan kapı + 1 arka kapı</td>
+        </tr>
+        <tr>
+          <td>Zırh Yapısı</td>
+          <td>NATO STANAG 4569’a göre ölçeklendirilebilir balistik koruma</td>
+        </tr>
+        <tr>
+          <td>Balistik Koruma</td>
+          <td>Ölçeklendirilebilir / modüler koruma yapısı</td>
+        </tr>
+        <tr>
+          <td>Mayın Koruma</td>
+          <td>Yüksek koruma seviyesi hedefli hafif sınıf yapı</td>
+        </tr>
+        <tr>
+          <td>Süspansiyon</td>
+          <td>Tam bağımsız süspansiyon sistemi</td>
+        </tr>
+        <tr>
+          <td>Lastik Tipi</td>
+          <td>Run-flat lastikler</td>
+        </tr>
+        <tr>
+          <td>Lastik Basınç Yönetimi</td>
+          <td>Merkezi lastik şişirme sistemi (CTIS)</td>
+        </tr>
+        <tr>
+          <td>Emniyet Kemerleri</td>
+          <td>5 noktalı emniyet kemerleri</td>
+        </tr>
+        <tr>
+          <td>Çalışma Sıcaklığı</td>
+          <td>-32°C ile +55°C arası</td>
+        </tr>
+        <tr>
+          <td>Hava Taşınabilirlik</td>
+          <td>CH-47 helikopteri ile askıda taşınabilir</td>
+        </tr>
+        <tr>
+          <td>Modülerlik</td>
+          <td>Farklı görev kitleri ve silah yükleri için modüler yapı</td>
+        </tr>
+        <tr>
+          <td>Silah Sistemi Entegrasyonu</td>
+          <td>Çeşitli silah sistemleri ve görev yükleri taşımaya uygun</td>
+        </tr>
+        <tr>
+          <td>İç Yerleşim</td>
+          <td>Güvenlik ve görev verimliliğini önceleyen kompakt iç tasarım</td>
+        </tr>
+        <tr>
+          <td>Kullanım Alanı</td>
+          <td>Farklı coğrafyalarda ve farklı görev yoğunluklarında görev icrasına uygun</td>
+        </tr>
+        <tr>
+          <td>Öne Çıkan Özellik</td>
+          <td>Hafif sınıfta yüksek koruma, modülerlik ve hava taşınabilirlik kombinasyonu</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    NMS-L 4x4 detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş NMS-L 4x4 görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/nmsl1.jpg",
+      "images/nmsl2.jpg",
+      "images/nmsl3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim() {
+      aktifResim++;
+      if (aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim() {
+      aktifResim--;
+      if (aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e) {
+      if (e.target.id === "lightbox") {
+        this.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

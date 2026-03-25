@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCG Heybeliada (F-511)</title>
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+padding:60px 20px 40px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+max-width:900px;
+margin:0 auto;
+color:#dbeafe;
+font-size:18px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:35px auto;
+}
+
+.back-link{
+display:inline-block;
+margin-bottom:24px;
+color:#93c5fd;
+text-decoration:none;
+font-weight:bold;
+}
+
+.info-box{
+background:#1e293b;
+border-radius:18px;
+padding:22px;
+margin-bottom:26px;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.info-box h2{
+color:#93c5fd;
+margin-bottom:12px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+margin-bottom:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:18px;
+cursor:pointer;
+transition:transform .25s;
+box-shadow:0 10px 24px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.spec-table{
+width:100%;
+border-collapse:collapse;
+background:#0f172a;
+border-radius:10px;
+overflow:hidden;
+}
+
+.spec-table td{
+padding:10px;
+border-bottom:1px solid #475569;
+vertical-align:top;
+}
+
+.spec-table tr:last-child td{
+border-bottom:none;
+}
+
+.spec-table td:first-child{
+color:#cbd5e1;
+width:38%;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:25px;
+margin-top:40px;
+background:#111827;
+color:#cbd5e1;
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.96);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(6px);
+}
+
+.lightbox img{
+max-width:95vw;
+max-height:95vh;
+border-radius:12px;
+}
+
+.lightbox-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+cursor:pointer;
+padding:10px 18px;
+background:rgba(0,0,0,0.25);
+border-radius:10px;
+user-select:none;
+}
+
+.lightbox-prev{left:30px;}
+.lightbox-next{right:30px;}
+
+@media(max-width:900px){
+.gallery{grid-template-columns:1fr;}
+.spec-table td:first-child{width:46%;}
+.lightbox-arrow{font-size:40px;}
+.lightbox-prev{left:10px;}
+.lightbox-next{right:10px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>TCG Heybeliada (F-511)</h1>
+<p>MİLGEM Ada Sınıfı korvetlerin ilk gemisi.</p>
+</header>
+
+<div class="container">
+
+<a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+<div class="info-box">
+<h2>Genel Bilgi</h2>
+
+<p>
+TCG Heybeliada (F-511), Türkiye'nin milli savaş gemisi projesi olan
+MİLGEM kapsamında geliştirilen Ada sınıfı korvetlerin ilk gemisidir.
+</p>
+
+<br>
+
+<p>
+Platform özellikle denizaltı harbi görevleri için tasarlanmış olup
+gelişmiş sensör, sonar ve silah sistemleri ile donatılmıştır.
+</p>
+
+<br>
+
+<p>
+Gemide yerli savaş yönetim sistemi, milli sensörler ve modern
+deniz harbi sistemleri kullanılmaktadır.
+</p>
+
+</div>
+
+<div class="gallery">
+<img src="images/heybeliada1.jpg" onclick="resimAc(0)">
+<img src="images/heybeliada2.jpg" onclick="resimAc(1)">
+<img src="images/heybeliada3.jpg" onclick="resimAc(2)">
+</div>
+
+<div class="info-box">
+<h2>Teknik Özellikler</h2>
+
+<table class="spec-table">
+
+<tr><td>Gemi Sınıfı</td><td>Ada Sınıfı Korvet</td></tr>
+<tr><td>Borda Numarası</td><td>F-511</td></tr>
+<tr><td>Program</td><td>MİLGEM</td></tr>
+<tr><td>Üretim Yeri</td><td>İstanbul Tersanesi Komutanlığı</td></tr>
+
+<tr><td>Boy</td><td>99.5 m</td></tr>
+<tr><td>Genişlik</td><td>14.4 m</td></tr>
+<tr><td>Deplasman</td><td>≈ 2400 ton</td></tr>
+
+<tr><td>Azami Hız</td><td>29+ knot</td></tr>
+<tr><td>Menzil</td><td>3500 deniz mili</td></tr>
+
+<tr><td>Tahrik Sistemi</td><td>CODAG (Combined Diesel And Gas)</td></tr>
+<tr><td>Dizel Motor</td><td>2 × dizel motor</td></tr>
+<tr><td>Gaz Türbini</td><td>1 × gaz türbini</td></tr>
+
+<tr><td>Mürettebat</td><td>93</td></tr>
+<tr><td>Helikopter Kapasitesi</td><td>1 × S-70 Seahawk</td></tr>
+
+<tr><td>Ana Top</td><td>76 mm OTO Melara</td></tr>
+<tr><td>Gemi Savar Füze</td><td>Harpoon / ATMACA</td></tr>
+<tr><td>Yakın Savunma</td><td>RAM CIWS</td></tr>
+<tr><td>Torpido</td><td>324 mm torpido tüpleri</td></tr>
+
+<tr><td>Radar</td><td>SMART-S Mk2</td></tr>
+<tr><td>Savaş Yönetim Sistemi</td><td>GENESIS</td></tr>
+<tr><td>Sonar</td><td>Hull Mounted Sonar</td></tr>
+
+<tr><td>Görev Profili</td><td>Denizaltı harbi, suüstü harbi, keşif ve devriye</td></tr>
+
+</table>
+</div>
+
+</div>
+
+<footer>
+TCG Heybeliada (F-511) • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+<div class="lightbox-arrow lightbox-prev" onclick="onceki()">❮</div>
+<img id="lightbox-img">
+<div class="lightbox-arrow lightbox-next" onclick="sonraki()">❯</div>
+</div>
+
+<script>
+
+const resimler=[
+"images/heybeliada1.jpg",
+"images/heybeliada2.jpg",
+"images/heybeliada3.jpg"
+];
+
+let aktif=0;
+
+function resimAc(i){
+aktif=i;
+document.getElementById("lightbox-img").src=resimler[i];
+document.getElementById("lightbox").style.display="flex";
+}
+
+function sonraki(){
+aktif++;
+if(aktif>=resimler.length)aktif=0;
+document.getElementById("lightbox-img").src=resimler[aktif];
+}
+
+function onceki(){
+aktif--;
+if(aktif<0)aktif=resimler.length-1;
+document.getElementById("lightbox-img").src=resimler[aktif];
+}
+
+document.getElementById("lightbox").onclick=function(e){
+if(e.target.id==="lightbox"){
+this.style.display="none";
+}
+}
+
+</script>
+
+</body>
+</html>

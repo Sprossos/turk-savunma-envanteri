@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMS 4x4 / YÖRÜK 4x4</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .spec-table td {
+      padding: 10px;
+      border-bottom: 1px solid #475569;
+      vertical-align: top;
+    }
+
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec-table td:first-child {
+      color: #cbd5e1;
+      width: 34%;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+
+      .spec-table td:first-child {
+        width: 42%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NMS 4x4 / YÖRÜK 4x4</h1>
+    <p>Nurol Makina tarafından geliştirilen hafif sınıf 4x4 taktik tekerlekli zırhlı araç platformu.</p>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        NMS 4x4, Nurol Makina’nın geliştirdiği hafif taktik tekerlekli zırhlı araçtır. Türkiye’de
+        YÖRÜK 4x4 adıyla da anılan platform, şehir içi görevler, devriye, keşif, sınır güvenliği,
+        komuta-kontrol ve silah taşıyıcı görevleri için tasarlanmıştır.
+      </p>
+      <br>
+      <p>
+        Araç, kompakt boyutları sayesinde dar alanlarda yüksek hareket kabiliyeti sağlarken,
+        aynı zamanda yüksek balistik ve mayın koruma seviyesi sunar. Modüler yapısı sayesinde
+        farklı görev sistemleri ve uzaktan komutalı silah istasyonlarıyla uyumlu şekilde kullanılabilir.
+      </p>
+      <br>
+      <p>
+        Nurol Makina’nın ürün tanıtımında NMS 4x4; 9 kişilik kapasitesi, güçlü motoru, bağımsız
+        süspansiyonu, yüksek yol hızı ve gelişmiş görev ekipmanlarıyla modern güvenlik ve savunma
+        ihtiyaçlarına uygun bir platform olarak öne çıkar.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/yoruk1.jpg" alt="NMS 4x4 / YÖRÜK 4x4 görsel 1" onclick="resimAc(0)">
+      <img src="images/yoruk2.jpg" alt="NMS 4x4 / YÖRÜK 4x4 görsel 2" onclick="resimAc(1)">
+      <img src="images/yoruk3.jpg" alt="NMS 4x4 / YÖRÜK 4x4 görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+
+      <table class="spec-table">
+        <tr>
+          <td>Araç Sınıfı</td>
+          <td>4x4 hafif taktik tekerlekli zırhlı araç</td>
+        </tr>
+        <tr>
+          <td>Üretici</td>
+          <td>Nurol Makina</td>
+        </tr>
+        <tr>
+          <td>İhracat Adı</td>
+          <td>NMS 4x4</td>
+        </tr>
+        <tr>
+          <td>Türkiye’de Bilinen Adı</td>
+          <td>YÖRÜK 4x4</td>
+        </tr>
+        <tr>
+          <td>Toplam Personel Kapasitesi</td>
+          <td>9 kişi</td>
+        </tr>
+        <tr>
+          <td>Mürettebat Düzeni</td>
+          <td>2 + 7</td>
+        </tr>
+        <tr>
+          <td>Azami Yüklü Ağırlık</td>
+          <td>Yaklaşık 10 ton sınıfı</td>
+        </tr>
+        <tr>
+          <td>Motor</td>
+          <td>Turbo dizel</td>
+        </tr>
+        <tr>
+          <td>Motor Gücü</td>
+          <td>300 bg</td>
+        </tr>
+        <tr>
+          <td>Şanzıman</td>
+          <td>Otomatik şanzıman</td>
+        </tr>
+        <tr>
+          <td>Tahrik Düzeni</td>
+          <td>4x4</td>
+        </tr>
+        <tr>
+          <td>Azami Hız</td>
+          <td>140 km/s</td>
+        </tr>
+        <tr>
+          <td>Menzil</td>
+          <td>Yaklaşık 700 km</td>
+        </tr>
+        <tr>
+          <td>Süspansiyon</td>
+          <td>Bağımsız süspansiyon</td>
+        </tr>
+        <tr>
+          <td>Yerden Yükseklik</td>
+          <td>Yüksek arazi kabiliyeti sağlayan zırhlı gövde yerleşimi</td>
+        </tr>
+        <tr>
+          <td>Tırmanma Kabiliyeti</td>
+          <td>%70</td>
+        </tr>
+        <tr>
+          <td>Yan Eğim</td>
+          <td>%40</td>
+        </tr>
+        <tr>
+          <td>Dik Engel Aşma</td>
+          <td>0,5 m</td>
+        </tr>
+        <tr>
+          <td>Hendek Geçişi</td>
+          <td>0,9 m</td>
+        </tr>
+        <tr>
+          <td>Sudan Geçiş</td>
+          <td>1 m</td>
+        </tr>
+        <tr>
+          <td>Balistik Koruma</td>
+          <td>Yüksek balistik koruma seviyesi</td>
+        </tr>
+        <tr>
+          <td>Mayın Koruma</td>
+          <td>Yüksek mayın koruma seviyesi</td>
+        </tr>
+        <tr>
+          <td>Koltuk Sistemi</td>
+          <td>Mayın etkisini azaltmaya yönelik korumalı iç yerleşim</td>
+        </tr>
+        <tr>
+          <td>Silah Sistemi Entegrasyonu</td>
+          <td>Uzaktan komutalı silah sistemi entegrasyonuna uygun</td>
+        </tr>
+        <tr>
+          <td>Silah Seçenekleri</td>
+          <td>7.62 mm / 12.7 mm / 40 mm otomatik bombaatar</td>
+        </tr>
+        <tr>
+          <td>Elektronik Sistemler</td>
+          <td>Görev bilgisayarı, haberleşme ve görev ekipmanı entegrasyonuna uygun altyapı</td>
+        </tr>
+        <tr>
+          <td>Gözetleme / Görüş</td>
+          <td>Gece-gündüz görev yapısına uygun görüş destek sistemleri</td>
+        </tr>
+        <tr>
+          <td>CBRN Koruma</td>
+          <td>Opsiyonel koruma sistemleriyle desteklenebilir görev yapısı</td>
+        </tr>
+        <tr>
+          <td>Görev Rolleri</td>
+          <td>Devriye, keşif, komuta-kontrol, silah taşıyıcı, personel taşıyıcı</td>
+        </tr>
+        <tr>
+          <td>Öne Çıkan Özellik</td>
+          <td>Kompakt boyutta yüksek hız, yüksek koruma ve çok görevli kullanım</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    NMS 4x4 / YÖRÜK 4x4 detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş NMS 4x4 / YÖRÜK 4x4 görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/yoruk1.jpg",
+      "images/yoruk2.jpg",
+      "images/yoruk3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim() {
+      aktifResim++;
+      if (aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim() {
+      aktifResim--;
+      if (aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e) {
+      if (e.target.id === "lightbox") {
+        this.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

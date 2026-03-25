@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COBRA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>COBRA</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        COBRA, Otokar tarafından geliştirilen 4x4 taktik tekerlekli zırhlı araçtır. Araç,
+        zorlu arazi ve iklim koşullarında görev yapabilmesi, modüler gövde yapısı ve farklı
+        görev paketlerine uyarlanabilmesi ile öne çıkar. Resmî broşürde personel taşıyıcı,
+        ambulans, tanksavar platformu, keşif aracı, komuta kontrol aracı, iç güvenlik aracı,
+        20 mm top platformu ve NBC keşif aracı gibi çok sayıda görev varyantı listelenmektedir.
+      </p>
+      <br>
+      <p>
+        Otokar, COBRA’nın monokok gövde yapısının balistik korumayı artırdığını; optimize edilmiş
+        gövde açıları sayesinde patlayıcı ve mayınlara karşı dikkate değer koruma sunduğunu belirtiyor.
+        Broşürde ayrıca A/P ve A/T tipi mayınlara karşı koruma vurgulanıyor.
+      </p>
+      <br>
+      <p>
+        Araç; kalıcı 4x4 çekiş, otomatik şanzıman, merkezi lastik şişirme sistemi, run-flat lastikler,
+        gece görüş periskopları ve amfibi seçenekleriyle çok yönlü bir taktik zırhlı platform olarak
+        tasarlanmıştır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/cobra1.jpg" alt="COBRA görsel 1" onclick="resimAc(0)">
+      <img src="images/cobra2.jpg" alt="COBRA görsel 2" onclick="resimAc(1)">
+      <img src="images/cobra3.jpg" alt="COBRA görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">4x4 Taktik Tekerlekli Zırhlı Araç</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otokar</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Yüklü Ağırlık</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">6700 kg</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Personel Kapasitesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Sürücü ve komutan dahil 9 kişi</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uzunluk</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">5480 mm (vinç dahil)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Genişlik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2240 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Gövde Üstü Yükseklik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2100 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yerden Yükseklik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">400 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Turbo şarjlı dizel V8</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor Gücü</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">190 HP</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Şanzıman</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otomatik</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Transfer Kutusu</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kalıcı 4 teker çekiş, kilitli, 2 hızlı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Akslar</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Bağımsız double A-frame, hypoid diferansiyelli</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Süspansiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Helezon yaylı süspansiyon</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Frenler</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Servo destekli hidrolik disk frenler</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Direksiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Güç destekli</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Lastikler</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">37x12,50 R 16,5 LT run-flat sistemli</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Elektrik Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">24 V, 12 V 120 Ah bakım gerektirmeyen aküler, 28 V alternatör</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Hız</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">100 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menzil</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">600 km</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ford Derinliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">1000 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yan Eğim</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">40%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Tırmanma Kabiliyeti</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">60%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Dikey Engel Aşma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">400 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Hendek Geçişi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">800 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yaklaşma / Uzaklaşma Açısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">56° (vinçli) / 57°</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Amfibi Versiyon Su Hızı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">8 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Gövde Yapısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Monokok zırhlı gövde</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Balistik Koruma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Piyade tüfeklerine karşı zırh delici mermilere karşı koruma</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mayın Koruması</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">A/P ve A/T tipi mayınlara karşı koruma vurgulanır</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Standart Donanım</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Merkezi lastik şişirme, run-flat lastikler, klima/ısıtıcı, tavan kapakları, atış mazgalları, çekme noktası, blackout aydınlatma, jump-start soketi, telsiz altyapısı, emniyet kemerleri, hava tahliye fanı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Opsiyonlar</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Amfibi kabiliyet, kış kiti, 360° durumsal farkındalık, 5.5 ton elektrikli kendini kurtarma vinci, CBRN filtrasyon, otomatik yangın söndürme ve patlama bastırma, interkom, duman lançeri, sürücü görüş iyileştirme, gece görüş periskopları, GPS/INS, barikat sökücü</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Görev Varyantları</td>
+          <td style="padding:10px;">Personel taşıyıcı, ambulans, tanksavar platformu, keşif aracı, komuta-kontrol, iç güvenlik, 20 mm top platformu, 40 mm AGL kuleli platform, NBC keşif, jammer aracı</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    COBRA detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş COBRA görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/cobra1.jpg",
+      "images/cobra2.jpg",
+      "images/cobra3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index){
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim(){
+      aktifResim++;
+      if(aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(){
+      aktifResim--;
+      if(aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e){
+      if(e.target.id === "lightbox"){
+        this.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

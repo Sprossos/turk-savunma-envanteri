@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PARS ALPHA 8x8</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PARS ALPHA 8x8</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        PARS ALPHA 8x8, FNSS tarafından geliştirilen yeni nesil zırhlı muharebe aracıdır.
+        Platform, yüksek hareket kabiliyeti, artırılmış koruma seviyesi ve çok sayıda
+        silah / görev sistemi entegrasyonuna uygun modüler yapısıyla dikkat çeker.
+      </p>
+      <br>
+      <p>
+        FNSS ürün tanıtımında araç iç yerleşiminin yeniden tasarlandığı, sürücü ve komutanın
+        güç grubu yanında yan yana konumlandığı ve bu sayede ergonomi ile farkındalığın artırıldığı
+        vurgulanır. Ayarlanabilir hidro-pnömatik süspansiyon sistemi, ihtiyaç halinde yerden
+        yüksekliği 60 cm üzerine çıkararak mayın korumasına katkı sağlayabilir.
+      </p>
+      <br>
+      <p>
+        PARS ALPHA 8x8; mobil top sistemi, 30 mm / 40 mm kuleli muharebe araçları, 35 mm hava
+        savunma sistemi, 120 mm havan aracı ve komuta-kontrol / ateş destek aracı gibi çok sayıda
+        varyantta sunulmaktadır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/parsalpha8x8_1.jpg" alt="PARS ALPHA 8x8 görsel 1" onclick="resimAc(0)">
+      <img src="images/parsalpha8x8_2.jpg" alt="PARS ALPHA 8x8 görsel 2" onclick="resimAc(1)">
+      <img src="images/parsalpha8x8_3.jpg" alt="PARS ALPHA 8x8 görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yeni Nesil 8x8 Zırhlı Muharebe Aracı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">FNSS</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Araç Ailesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">PARS ALPHA 8x8 New Generation AFV</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">711 HP dizel</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Transmisyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Tam otomatik, 6 ileri 1 geri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Kara Hızı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">115 km/s üzeri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sürünme Hızı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">5 km/s altı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menzil</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">800 km üzeri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Tırmanma Kabiliyeti</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">%70</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yan Eğim</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">%40</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yaklaşma Açısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">55° üzeri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uzaklaşma Açısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">55° üzeri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Dikey Engel Aşma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">0.8 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Hendek Geçişi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2.4 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Dönüş Yarıçapı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">7.8 m’den küçük</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Su Geçiş Derinliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">1.2 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Süspansiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Bağımsız, çift salıncaklı hidro-pnömatik, yükseklik ayarlı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yerden Yükseklik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Ayarlanabilir; ihtiyaç halinde 60 cm üzerine çıkabilir</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mürettebat Düzeni</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Sürücü ve komutan güç grubu yanında yan yana yerleşim</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Aktif Koruma Sistemleri</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Soft-kill ve hard-kill aktif koruma entegrasyonu mümkün</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uyarı Sistemleri</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Lazer ikaz ve silah atışı tespit sistemi entegre edilebilir</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Varyantlar</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">120/105/90 mm mobil top, 30/40 mm kuleli AFV, 35 mm RCT, 120 mm havan, 35 mm hava savunma, hava savunma füze sistemi, muharebe mühendisliği, komuta-kontrol ve ateş destek</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Öne Çıkan Özellik</td>
+          <td style="padding:10px;">Yüksek hareket kabiliyeti ile gelişmiş koruma ve çok geniş görev modülü çeşitliliğini birleştiren yeni nesil platform</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    PARS ALPHA 8x8 detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş PARS ALPHA 8x8 görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/parsalpha8x8_1.jpg",
+      "images/parsalpha8x8_2.jpg",
+      "images/parsalpha8x8_3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index){
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim(){
+      aktifResim++;
+      if(aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(){
+      aktifResim--;
+      if(aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e){
+      if(e.target.id === "lightbox"){
+        this.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

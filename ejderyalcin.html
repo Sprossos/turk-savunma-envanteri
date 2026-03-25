@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EJDER YALÇIN</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EJDER YALÇIN</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        EJDER YALÇIN, Nurol Makina tarafından geliştirilen 4x4 taktik tekerlekli zırhlı araçtır.
+        Araç; kırsal ve kentsel bölgelerde askeri birlikler ile güvenlik güçlerinin operasyonel
+        ihtiyaçlarını karşılamak amacıyla geliştirilmiştir.
+      </p>
+      <br>
+      <p>
+        Platform, yüksek koruma ve hareket kabiliyetini bir araya getiren modüler bir yapıya sahiptir.
+        Farklı görev yüklerinin entegre edilebilmesi sayesinde komuta-kontrol, tanksavar, hava savunma,
+        mayın/EYP tespit-imha, ambulans, personel taşıyıcı, sınır güvenliği, keşif-gözetleme, zırhlı
+        muharebe, havan, radar ve jammer gibi çok sayıda varyantta kullanılabilmektedir.
+      </p>
+      <br>
+      <p>
+        Ergonomik iç yerleşim, kolay iniş-biniş, gövde içine entegre haberleşme altyapısı, gece-gündüz
+        görüş sistemleri ve yüksek koruma seviyesi ile EJDER YALÇIN modern taktik görevler için çok
+        yönlü bir platform olarak öne çıkmaktadır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/ejderyalcin1.jpg" alt="EJDER YALÇIN görsel 1" onclick="resimAc(0)">
+      <img src="images/ejderyalcin2.jpg" alt="EJDER YALÇIN görsel 2" onclick="resimAc(1)">
+      <img src="images/ejderyalcin3.jpg" alt="EJDER YALÇIN görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Araç Sınıfı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">4x4 Taktik Tekerlekli Zırhlı Araç</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Nurol Makina</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Personel Taşıma Kapasitesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">12 kişiye kadar</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Tasarım Özelliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Ergonomik iç yerleşim ve kolay iniş-biniş</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Silah Sistemi Entegrasyonu</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Manuel veya uzaktan komutalı silah sistemi entegrasyonu</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ateş Mazgalları</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Sağ ve sol el kullanımına uygun mazgallar</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Lastik Yapısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Run-flat lastikler</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Merkezi Lastik Şişirme Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">CTIS</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Direksiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Hidrolik destekli güç direksiyonu</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Bakım Özelliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Hızlı, kolay ve düşük maliyetli bakım</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Balistik Koruma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">MRAP seviyesinde balistik koruma</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mayın Koruması</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">MRAP seviyesinde mayın koruması</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">EYP / Yanal Patlama Koruması</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">IED ve lateral blast tehdidine karşı koruma</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">CBRN Koruma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kimyasal, biyolojik, radyolojik ve nükleer koruma sistemi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">İç Haberleşme</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">İç iletişim / interkom sistemi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Telsiz Altyapısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Araç içine entegre radyo altyapısı</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Araç Kameraları</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Ön ve arka kamera sistemleri</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Görüş Sistemleri</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Gündüz / gece görüş sistemi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sürücü Görüş İyileştirme</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">360° sürücü görüş iyileştirme sistemi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Kendini Kurtarma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kendini kurtarma vinci</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Duman Havanı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Duman bombası lançerleri</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Aydınlatma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Black-out ışık sistemi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Arka Kapı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Elektrohidrolik arka kapı</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yakıt Tankı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Patlamaya dayanıklı ve delinmeye dirençli</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">İç Ortam Donanımı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Barut gazı tahliye fanları</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Elektrik / Güç</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Araç içine entegre redresör</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Görev Varyantları</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Komuta-kontrol, tanksavar füze aracı, hava savunma füze aracı, mayın/EYP tespit-imha, ambulans, personel taşıyıcı, sınır gözetleme ve güvenlik, keşif-gözetleme, zırhlı muharebe, havan, radar, jammer</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Öne Çıkan Özellik</td>
+          <td style="padding:10px;">Yüksek koruma seviyesiyle çok sayıda görev konfigürasyonuna uyarlanabilen modüler 4x4 platform</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    EJDER YALÇIN detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş EJDER YALÇIN görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/ejderyalcin1.jpg",
+      "images/ejderyalcin2.jpg",
+      "images/ejderyalcin3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index){
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim(){
+      aktifResim++;
+      if(aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(){
+      aktifResim--;
+      if(aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e){
+      if(e.target.id === "lightbox"){
+        this.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

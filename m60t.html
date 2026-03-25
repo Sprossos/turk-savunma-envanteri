@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M60T</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>M60T</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        M60T, Türk Kara Kuvvetleri envanterindeki M60 tank ailesinin modernize edilmiş varyantıdır.
+        Platform, zırh koruması, atış kontrol kabiliyeti ve muharebe farkındalığını artırmaya yönelik
+        çeşitli iyileştirmelerle güncellenmiştir.
+      </p>
+      <br>
+      <p>
+        Türk savunma sanayii tarafından yürütülen FIRAT M60T kapsamında tankın özellikle atış kontrol,
+        sensör ve beka unsurlarında önemli geliştirmeler yapılmıştır. ASELSAN’ın VOLKAN 201/120
+        atış kontrol sistemi bu modernizasyon kapsamında öne çıkan alt sistemlerden biridir.
+      </p>
+      <br>
+      <p>
+        M60T, modernize yapısıyla kara birliklerine destek vermek, zırhlı birliklerin ateş gücünü korumak
+        ve mevcut platformların etkinliğini artırmak amacıyla kullanılmaktadır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/m60t1.jpg" alt="M60T görsel 1" onclick="resimAc(0)">
+      <img src="images/m60t2.jpg" alt="M60T görsel 2" onclick="resimAc(1)">
+      <img src="images/m60t3.jpg" alt="M60T görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Modernize Ana Muharebe Tankı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Platform Kökeni</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">M60 ailesi</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Kullanıcı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Türk Kara Kuvvetleri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mürettebat</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">4</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ana Silah</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">105 mm tank topu</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">İkincil Silah</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">7.62 mm eş eksenli makineli tüfek</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ek Silah</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">12.7 mm makineli tüfek</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ağırlık</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 57 ton</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">750 hp dizel motor</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Hız</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 48 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menzil</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 450-500 km</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Süspansiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Torsiyon bar</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Atış Kontrol Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">ASELSAN VOLKAN 201/120</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Gece / Termal Kabiliyet</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Modern nişangâh ve termal görüş entegrasyonu</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Modernizasyon Odağı</td>
+          <td style="padding:10px;">Ateş gücü, beka ve durumsal farkındalık artırımı</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    M60T detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim(event)">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş M60T görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim(event)">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/m60t1.jpg",
+      "images/m60t2.jpg",
+      "images/m60t3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = resimler[aktifResim];
+      lightbox.style.display = "flex";
+    }
+
+    function kapat() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function sonrakiResim(event) {
+      event.stopPropagation();
+      aktifResim++;
+      if (aktifResim >= resimler.length) {
+        aktifResim = 0;
+      }
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(event) {
+      event.stopPropagation();
+      aktifResim--;
+      if (aktifResim < 0) {
+        aktifResim = resimler.length - 1;
+      }
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").addEventListener("click", function(e) {
+      if (e.target.id === "lightbox") {
+        kapat();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KİRPİ II</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+      padding:60px 20px 40px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:42px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:35px auto;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-bottom:24px;
+      color:#93c5fd;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:16px;
+    }
+
+    .info-box{
+      background:#1e293b;
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:26px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2{
+      color:#93c5fd;
+      margin-bottom:12px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:20px;
+      margin-bottom:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 10px 24px rgba(0,0,0,0.28);
+      cursor:pointer;
+      transition:transform .25s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+      color:#cbd5e1;
+      background:#111827;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.96);
+      backdrop-filter:blur(6px);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:95vw;
+      max-height:95vh;
+      border-radius:12px;
+    }
+
+    .lightbox-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:56px;
+      color:white;
+      cursor:pointer;
+      padding:10px 18px;
+      border-radius:12px;
+      background:rgba(0,0,0,0.25);
+      user-select:none;
+    }
+
+    .lightbox-prev{left:30px;}
+    .lightbox-next{right:30px;}
+
+    @media (max-width:900px){
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .lightbox-arrow{
+        font-size:40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>KİRPİ II</h1>
+</header>
+
+<div class="container">
+
+  <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="info-box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      KİRPİ II, BMC tarafından geliştirilen ve KİRPİ ailesinin geliştirilmiş ikinci nesil 4x4
+      mayına dayanıklı zırhlı aracıdır. Araç, özellikle personel güvenliğini önceleyen kapsül tipi
+      zırhlı gövde yapısı ve yüksek koruma yaklaşımı ile öne çıkar.
+    </p>
+
+    <br>
+
+    <p>
+      BMC’nin ürün tanıtımında KİRPİ II 4x4; farklı ihtiyaçlara yönelik silah sistemi entegrasyonu,
+      13 kişilik taşıma kapasitesi, bağımsız süspansiyon sistemi ve özel kapsül tasarımı ile yüksek
+      koruma sağlayan bir platform olarak tanımlanır.
+    </p>
+
+    <br>
+
+    <p>
+      Şirketin 2024 tarihli açıklamasında araçta bağımsız süspansiyon, monokok tip zırhlı kabin,
+      özel zırhlı camlar, şok emici koltuklar, silah istasyonu, acil çıkış kapağı ve görev odaklı
+      birçok ekipmanın bulunduğu da vurgulanmıştır.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/kirpi2-1.jpg" alt="KİRPİ II görsel 1" onclick="resimAc(0)">
+    <img src="images/kirpi2-2.jpg" alt="KİRPİ II görsel 2" onclick="resimAc(1)">
+    <img src="images/kirpi2-3.jpg" alt="KİRPİ II görsel 3" onclick="resimAc(2)">
+  </div>
+
+  <div class="info-box">
+    <h2>Teknik Özellikler</h2>
+
+    <table style="width:100%;border-collapse:collapse;background:#0f172a;border-radius:10px;overflow:hidden;">
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Araç Sınıfı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">MRAP / Mayına Dayanıklı Zırhlı Araç</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Üretici</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">BMC</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Varyant</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">KİRPİ II 4x4</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Taşıma Kapasitesi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">13 kişi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Azami Yüklü Ağırlık</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">22.000 kg</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Motor Markası / Modeli</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Cummins ISL9E3 375</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Motor Tipi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Turbo, intercooler, dizel</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Silindir Sayısı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">6</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Motor Hacmi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">8,9 lt</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Azami Güç</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">375 PS (275 kW) @ 2100 rpm</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Azami Tork</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">1550 Nm @ 1100–1400 rpm</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Şanzıman Markası</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Allison 3000 Series</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Şanzıman Tipi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Tam otomatik, tork konvertörlü</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Vites Sayısı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">6 ileri, 1 geri</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Transfer Kutusu</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">İki hızlı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Tahrik Düzeni</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">4x4</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Aks / Süspansiyon</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Bağımsız süspansiyon sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Fren Sistemi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Kampana tipi, hava takviyeli kuru tip servis freni, hava kumandalı yaylı el freni, Jacobs freni</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Elektrik Sistemi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">24 V</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Aküler</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">4 x 12 V, 120 Ah</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Gövde Tipi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Monokok tip zırhlı kabin / özel kapsül tasarımı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Koruma Standardı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">STANAG 4569</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Koruma Türleri</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Balistik koruma, mayın koruma, EYP koruma</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Özel Camlar</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Özel zırhlı camlar</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Koltuklar</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Şok emici koltuklar</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Silah Sistemi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Farklı ihtiyaçlara yönelik silah sistemi entegrasyonu</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Yangın Söndürme</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Otomatik yangın söndürme sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">CBRN Koruma</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">CBRN koruma sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">İletişim</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">İnterkom sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Ek Görev Ekipmanları</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Anti-jamming güçlendirme, atış alanı hedef tespit sistemi, acil çıkış kapağı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Çevre Koşulları</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">-32°C ile +49°C</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;color:#cbd5e1;">Görev Uyarlamaları</td>
+        <td style="padding:10px;">Ambulans, kargo ve özel görev ekipmanı / robot kol entegreli versiyonlara uyarlanabilir</td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  KİRPİ II detay sayfası • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+  <img id="lightbox-img" alt="Büyütülmüş KİRPİ II görseli">
+  <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+</div>
+
+<script>
+  const resimler = [
+    "images/kirpi2-1.jpg",
+    "images/kirpi2-2.jpg",
+    "images/kirpi2-3.jpg"
+  ];
+
+  let aktifResim = 0;
+
+  function resimAc(index){
+    aktifResim = index;
+    document.getElementById("lightbox-img").src = resimler[index];
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function sonrakiResim(){
+    aktifResim++;
+    if(aktifResim >= resimler.length) aktifResim = 0;
+    document.getElementById("lightbox-img").src = resimler[aktifResim];
+  }
+
+  function oncekiResim(){
+    aktifResim--;
+    if(aktifResim < 0) aktifResim = resimler.length - 1;
+    document.getElementById("lightbox-img").src = resimler[aktifResim];
+  }
+
+  document.getElementById("lightbox").onclick = function(e){
+    if(e.target.id === "lightbox"){
+      this.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

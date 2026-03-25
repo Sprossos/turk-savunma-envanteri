@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACV-15</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+      padding:60px 20px 40px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:42px;
+      margin-bottom:12px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:35px auto;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-bottom:24px;
+      color:#93c5fd;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:16px;
+    }
+
+    .info-box{
+      background:#1e293b;
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:26px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2{
+      color:#93c5fd;
+      margin-bottom:12px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:20px;
+      margin-bottom:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 10px 24px rgba(0,0,0,0.28);
+      cursor:pointer;
+      transition:transform 0.25s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+      color:#cbd5e1;
+      background:#111827;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.95);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+    }
+
+    .lightbox img{
+      max-width:95vw;
+      max-height:95vh;
+      border-radius:12px;
+    }
+
+    .lightbox-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:55px;
+      cursor:pointer;
+      padding:10px;
+      user-select:none;
+    }
+
+    .lightbox-prev{
+      left:30px;
+    }
+
+    .lightbox-next{
+      right:30px;
+    }
+
+    @media (max-width:900px){
+      .gallery{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>ACV-15</h1>
+</header>
+
+<div class="container">
+
+  <a class="back-link" href="index.html">← Ana sayfaya dön</a>
+
+  <div class="info-box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      ACV-15, FNSS tarafından geliştirilen paletli zırhlı muharebe aracı ailesinin temel platformlarından biridir. Araç, düşük siluetli yapısı, yüksek hareket kabiliyeti ve farklı görev modüllerine uyarlanabilen yapısıyla mekanize birlikler için çok amaçlı bir çözüm sunar.
+    </p>
+
+    <br>
+
+    <p>
+      Platform; zırhlı personel taşıyıcı, piyade savaş aracı, komuta aracı, ambulans, havan taşıyıcı, kurtarma ve tanksavar gibi farklı görev varyantlarına dönüştürülebilir. FNSS’ye göre ACV-15 ailesi, 13-15 ton sınıfında dizel motorlu ve paletli bir zırhlı araç ailesidir.
+    </p>
+
+    <br>
+
+    <p>
+      Araç; arka hidrolik rampa, üst kapaklar, amfibi kabiliyet ve çeşitli silah/kule entegrasyon seçenekleri sayesinde geniş görev yelpazesinde kullanılabilir.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/acv15_1.jpg" alt="ACV-15 görsel 1" onclick="resimAc(0)">
+    <img src="images/acv15_2.jpg" alt="ACV-15 görsel 2" onclick="resimAc(1)">
+    <img src="images/acv15_3.jpg" alt="ACV-15 görsel 3" onclick="resimAc(2)">
+  </div>
+
+  <div class="info-box">
+    <h2>Teknik Özellikler</h2>
+
+    <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Paletli Zırhlı Muharebe Aracı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Araç Ailesi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">ACV-15 Armoured Combat Vehicle</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">FNSS</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ağırlık Sınıfı</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">13–15 ton sınıfı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yürüyüş Takımı</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Paletli, 5 yol tekerlekli</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Dizel</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Transmisyon</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Tam otomatik</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Direksiyon Sistemi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Transmisyon üzerinden yönlendirme</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Süspansiyon</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Torsiyon bar</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Kara Hızı</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">65 km/s</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menzil</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">490 km</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Tırmanma Kabiliyeti</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">%60</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yan Eğim</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">%30</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Dikey Engel Aşma</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">0.74 m</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Hendek Geçişi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">1.83 m</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Amfibi Kabiliyet</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Standart</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Su Hızı</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">6.3 km/s (palet tahriki ile)</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Personel Erişimi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Üst kapaklar + arka hidrolik rampa + entegre kapı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ana Gövde Tipi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Zırhlı personel taşıyıcı tabanlı modüler platform</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">AIFV Silah Seçeneği</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">Stabilize 25 mm insanlı veya uzaktan komutalı SABER kule</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">AAPC Silah Seçeneği</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">SANCAK UKSS veya 12.7 mm makineli tüfek</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">AIFV Personel Kapasitesi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">11 personel (sürücü, komutan, nişancı dahil)</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">AAPC Personel Kapasitesi</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">13 personel (sürücü, komutan, nişancı dahil)</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Başlıca Varyantlar</td>
+        <td style="padding:10px; border-bottom:1px solid #475569;">AAPC, AIFV, SPM81, ARV, TOW, FITTERS, AESV, CPV, AMEV, AFOV</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px; color:#cbd5e1;">Modernizasyon / Geliştirme Potansiyeli</td>
+        <td style="padding:10px;">Yakın koruma silah sistemi, APU, klima, otomatik yangın söndürme, spall liner, sürücü görüş ve seyrüsefer sistemleri gibi yükseltmelere uygun</td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  ACV-15 detay sayfası • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+  <img id="lightbox-img" alt="Büyütülmüş ACV-15 görseli">
+  <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+</div>
+
+<script>
+  const resimler = [
+    "images/acv15_1.jpg",
+    "images/acv15_2.jpg",
+    "images/acv15_3.jpg"
+  ];
+
+  let aktifResim = 0;
+
+  function resimAc(index){
+    aktifResim = index;
+    document.getElementById("lightbox-img").src = resimler[index];
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function sonrakiResim(){
+    aktifResim++;
+    if(aktifResim >= resimler.length) aktifResim = 0;
+    document.getElementById("lightbox-img").src = resimler[aktifResim];
+  }
+
+  function oncekiResim(){
+    aktifResim--;
+    if(aktifResim < 0) aktifResim = resimler.length - 1;
+    document.getElementById("lightbox-img").src = resimler[aktifResim];
+  }
+
+  document.getElementById("lightbox").onclick = function(e){
+    if(e.target.id === "lightbox"){
+      this.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

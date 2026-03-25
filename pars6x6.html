@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PARS 6x6</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+padding:60px 20px 40px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:35px auto;
+}
+
+.back-link{
+display:inline-block;
+margin-bottom:24px;
+color:#93c5fd;
+text-decoration:none;
+font-weight:bold;
+}
+
+.info-box{
+background:#1e293b;
+border-radius:18px;
+padding:22px;
+margin-bottom:26px;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.info-box h2{
+color:#93c5fd;
+margin-bottom:12px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+margin-top:20px;
+margin-bottom:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:18px;
+display:block;
+box-shadow:0 10px 24px rgba(0,0,0,0.28);
+cursor:pointer;
+transition:transform 0.25s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+footer{
+text-align:center;
+padding:25px;
+margin-top:40px;
+color:#cbd5e1;
+background:#111827;
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.96);
+backdrop-filter:blur(6px);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+padding:20px;
+}
+
+.lightbox img{
+max-width:95vw;
+max-height:95vh;
+border-radius:12px;
+}
+
+.lightbox-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:56px;
+color:white;
+cursor:pointer;
+padding:10px 18px;
+}
+
+.lightbox-prev{left:30px;}
+.lightbox-next{right:30px;}
+
+@media(max-width:900px){
+.gallery{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>PARS 6x6</h1>
+</header>
+
+<div class="container">
+
+<a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+<div class="info-box">
+
+<h2>Genel Bilgi</h2>
+
+<p>
+PARS 6x6, FNSS tarafından geliştirilen tekerlekli zırhlı muharebe aracı ailesinin
+6 tekerlekli konfigürasyonudur. Araç yüksek hareket kabiliyeti, modüler görev
+yapısı ve güçlü balistik koruma sağlayacak şekilde tasarlanmıştır.
+</p>
+
+<br>
+
+<p>
+PARS ailesinin daha hafif ve daha çevik varyantı olan PARS 6x6,
+özellikle keşif, komuta kontrol, personel taşıma ve özel görev
+konfigürasyonlarında kullanılmak üzere geliştirilmiştir.
+</p>
+
+<br>
+
+<p>
+Platform, bağımsız süspansiyon sistemi ve yüksek güç/ağırlık oranı
+sayesinde hem asfalt hem de arazi koşullarında yüksek mobilite sağlar.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<img src="images/pars6x6_1.jpg" onclick="resimAc(0)">
+<img src="images/pars6x6_2.jpg" onclick="resimAc(1)">
+<img src="images/pars6x6_3.jpg" onclick="resimAc(2)">
+
+</div>
+
+
+<div class="info-box">
+
+<h2>Teknik Özellikler</h2>
+
+<table style="width:100%; border-collapse:collapse; background:#0f172a">
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Sınıf</td>
+<td>6x6 Tekerlekli Zırhlı Muharebe Aracı</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Üretici</td>
+<td>FNSS</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Platform Ailesi</td>
+<td>PARS</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Muharebe Ağırlığı</td>
+<td>25 ton civarı</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Mürettebat</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Taşınan Personel</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Motor</td>
+<td>Dizel</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Transmisyon</td>
+<td>Tam otomatik</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Azami Hız</td>
+<td>100 km/s</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Menzil</td>
+<td>800 km</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Tırmanma Kabiliyeti</td>
+<td>%60</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Yan Eğim</td>
+<td>%30</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Hendek Geçişi</td>
+<td>1.5 m</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Dikey Engel</td>
+<td>0.6 m</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Süspansiyon</td>
+<td>Bağımsız hidro-pnömatik süspansiyon</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Ana Silah Seçenekleri</td>
+<td>12.7 mm, 25 mm veya 30 mm kule seçenekleri</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Koruma</td>
+<td>Balistik ve mayın koruması</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Görev Rolleri</td>
+<td>IFV, keşif, komuta kontrol, personel taşıyıcı</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+PARS 6x6 detay sayfası • Türk Savunma Sanayii Envanteri
+</footer>
+
+
+<div class="lightbox" id="lightbox">
+
+<div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+
+<img id="lightbox-img">
+
+<div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+
+</div>
+
+<script>
+
+const resimler=[
+"images/pars6x6_1.jpg",
+"images/pars6x6_2.jpg",
+"images/pars6x6_3.jpg"
+];
+
+let aktifResim=0;
+
+function resimAc(index){
+aktifResim=index;
+document.getElementById("lightbox-img").src=resimler[index];
+document.getElementById("lightbox").style.display="flex";
+}
+
+function sonrakiResim(){
+aktifResim++;
+if(aktifResim>=resimler.length) aktifResim=0;
+document.getElementById("lightbox-img").src=resimler[aktifResim];
+}
+
+function oncekiResim(){
+aktifResim--;
+if(aktifResim<0) aktifResim=resimler.length-1;
+document.getElementById("lightbox-img").src=resimler[aktifResim];
+}
+
+document.getElementById("lightbox").onclick=function(e){
+if(e.target.id==="lightbox"){
+this.style.display="none";
+}
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HİSAR-O+ Hava Savunma Füze Sistemi</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+  padding:70px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:44px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:40px auto;
+}
+
+.back{
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  margin-bottom:25px;
+}
+
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.box h2{
+  color:#93c5fd;
+  margin-bottom:12px;
+}
+
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.spec-card{
+  background:#0f172a;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.spec-card h3{
+  color:#60a5fa;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 10px 24px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+  background:#0f172a;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+td{
+  padding:10px;
+  border-bottom:1px solid #475569;
+  vertical-align:top;
+}
+
+tr:last-child td{
+  border-bottom:none;
+}
+
+td:first-child{
+  color:#cbd5e1;
+  width:40%;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111827;
+  margin-top:50px;
+  color:#cbd5e1;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:60px;
+  color:white;
+  cursor:pointer;
+  user-select:none;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(0,0,0,0.2);
+}
+
+.arrow:hover{
+  color:#60a5fa;
+  background:rgba(37,99,235,0.25);
+}
+
+.prev{
+  left:30px;
+}
+
+.next{
+  right:30px;
+}
+
+@media(max-width:900px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .arrow{
+    font-size:40px;
+    padding:10px;
+  }
+
+  .prev{
+    left:10px;
+  }
+
+  .next{
+    right:10px;
+  }
+
+  td:first-child{
+    width:46%;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>HİSAR-O+</h1>
+  <p>Orta İrtifa Hava Savunma Füze Sistemi</p>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      HİSAR-O+, orta irtifa hava savunma görevleri için geliştirilen yerli hava savunma ailesinin
+      önemli katmanlarından biridir. Sistem; askerî üsler, limanlar, kritik tesisler ve birliklerin
+      hava tehditlerine karşı korunması amacıyla tasarlanmıştır.
+    </p>
+
+    <br>
+
+    <p>
+      HİSAR ailesi modüler yapıdadır ve farklı platform entegrasyonları ile değişen atış kontrol ve
+      komuta kontrol altyapılarına uyum sağlayacak şekilde geliştirilmiştir. HİSAR-O+ bu ailenin orta
+      irtifa katmanındaki çözümüdür.
+    </p>
+
+    <br>
+
+    <p>
+      Sistem, dikey atışla 360 derece etkinlik, çoklu angajman, ardışık atış, gece-gündüz ve kötü hava
+      şartlarında görev yapabilme gibi özelliklerle katmanlı hava savunma mimarisinde önemli rol oynar.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Temel Özellikler</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Önleme Menzili</h3>
+        <p>25 km+</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Önleme İrtifası</h3>
+        <p>15 km+</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Füze Uzunluğu</h3>
+        <p>4.6 m</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Füze Çapı</h3>
+        <p>185 mm</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Terminal Güdüm</h3>
+        <p>RF Arayıcı</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Üretici Ekosistem</h3>
+        <p>ASELSAN / ROKETSAN</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Teknik Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Sistem Tipi</td>
+        <td>Orta irtifa hava ve füze savunma sistemi</td>
+      </tr>
+
+      <tr>
+        <td>Füze Adı</td>
+        <td>HİSAR-O+ / HİSAR-O (RF)</td>
+      </tr>
+
+      <tr>
+        <td>Görev Alanı</td>
+        <td>Askerî üsler, limanlar, tesisler ve birliklerin hava tehditlerine karşı korunması</td>
+      </tr>
+
+      <tr>
+        <td>Hedef Tipleri</td>
+        <td>Sabit kanatlı uçaklar, döner kanatlı hava platformları, İHA’lar, havadan karaya füzeler ve seyir füzeleri</td>
+      </tr>
+
+      <tr>
+        <td>Sistem Önleme Menzili</td>
+        <td>25 km+</td>
+      </tr>
+
+      <tr>
+        <td>Önleme İrtifası</td>
+        <td>15 km+</td>
+      </tr>
+
+      <tr>
+        <td>Füze Uzunluğu</td>
+        <td>4.6 m</td>
+      </tr>
+
+      <tr>
+        <td>Füze Çapı</td>
+        <td>185 mm</td>
+      </tr>
+
+      <tr>
+        <td>İlk Yönelim</td>
+        <td>İlk yönelim güdümü</td>
+      </tr>
+
+      <tr>
+        <td>Ara Safha Güdüm</td>
+        <td>Ataletsel seyrüsefer ve veri bağı</td>
+      </tr>
+
+      <tr>
+        <td>Terminal Güdüm</td>
+        <td>RF arayıcı başlık ve optimize güdüm algoritmaları</td>
+      </tr>
+
+      <tr>
+        <td>Harp Başlığı</td>
+        <td>Yüksek infilaklı parçacık etkili</td>
+      </tr>
+
+      <tr>
+        <td>Motor</td>
+        <td>Çift darbeli katı yakıtlı roket motoru</td>
+      </tr>
+
+      <tr>
+        <td>Atış Yapısı</td>
+        <td>Dikey atış kabiliyeti ile 360° etkinlik alanı</td>
+      </tr>
+
+      <tr>
+        <td>Yönlendirme</td>
+        <td>İtki vektör kontrol sistemi</td>
+      </tr>
+
+      <tr>
+        <td>Tapa Yapısı</td>
+        <td>Çarpma ve yaklaşma tapa</td>
+      </tr>
+
+      <tr>
+        <td>Kanister Yapısı</td>
+        <td>HİSAR-A ve HİSAR-O için ortak kanister ve göbek bağı arayüzü</td>
+      </tr>
+
+      <tr>
+        <td>Platformlar</td>
+        <td>Tekerlekli ve paletli kara araçları ile deniz araçları</td>
+      </tr>
+
+      <tr>
+        <td>Angajman Kabiliyeti</td>
+        <td>Çoklu angajman ve ardışık ateşleme</td>
+      </tr>
+
+      <tr>
+        <td>Görev Koşulları</td>
+        <td>Gündüz, gece ve olumsuz hava şartlarında görev yapabilme</td>
+      </tr>
+
+      <tr>
+        <td>Seyrüsefer</td>
+        <td>GPS ve seyrüsefer altyapısı</td>
+      </tr>
+
+      <tr>
+        <td>Kontrol</td>
+        <td>Uzaktan kontrol ve dağıtık/flexible mimari desteği</td>
+      </tr>
+
+      <tr>
+        <td>Dost-Düşman Tanıma</td>
+        <td>IFF entegrasyonu</td>
+      </tr>
+
+      <tr>
+        <td>Entegre Hava Resmi</td>
+        <td>Entegre hava resmi üretimi</td>
+      </tr>
+
+      <tr>
+        <td>Öne Çıkan Özellik</td>
+        <td>Orta irtifada, dikey lançerle 360 derece koruma sağlayan, RF arayıcı başlıklı yerli hava savunma çözümü</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Operasyonel Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Hava Savunma Katmanı</td>
+        <td>Orta irtifa katmanı</td>
+      </tr>
+
+      <tr>
+        <td>Mimari Yapı</td>
+        <td>Dağıtık mimari ve esnek konuşlanma</td>
+      </tr>
+
+      <tr>
+        <td>Görev Esnekliği</td>
+        <td>Farklı komuta kontrol ve atış kontrol altyapılarına uyumlu modüler tasarım</td>
+      </tr>
+
+      <tr>
+        <td>Katmanlı Savunma Uyumu</td>
+        <td>Diğer hava savunma sistemleriyle birlikte çalışabilecek yapı</td>
+      </tr>
+
+      <tr>
+        <td>Angajman Yaklaşımı</td>
+        <td>Birden fazla hedefe karşı ardışık ve çoklu angajman</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Görseller</h2>
+
+    <div class="gallery">
+      <img src="images/hisaro1.jpg" alt="HİSAR-O+ görsel 1" onclick="openImg(0)">
+      <img src="images/hisaro2.jpg" alt="HİSAR-O+ görsel 2" onclick="openImg(1)">
+      <img src="images/hisaro3.jpg" alt="HİSAR-O+ görsel 3" onclick="openImg(2)">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+HİSAR-O+ Hava Savunma Sistemi • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="arrow prev" onclick="prevImg()">❮</span>
+  <img id="lightbox-img" alt="Büyütülmüş HİSAR-O+ görseli">
+  <span class="arrow next" onclick="nextImg()">❯</span>
+</div>
+
+<script>
+const images = [
+  "images/hisaro1.jpg",
+  "images/hisaro2.jpg",
+  "images/hisaro3.jpg"
+];
+
+let index = 0;
+
+function openImg(i){
+  index = i;
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function nextImg(){
+  index++;
+  if(index >= images.length){
+    index = 0;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function prevImg(){
+  index--;
+  if(index < 0){
+    index = images.length - 1;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    this.style.display = "none";
+  }
+}
+
+document.addEventListener("keydown", function(e){
+  const lightbox = document.getElementById("lightbox");
+  if(lightbox.style.display === "flex"){
+    if(e.key === "ArrowRight") nextImg();
+    if(e.key === "ArrowLeft") prevImg();
+    if(e.key === "Escape") lightbox.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

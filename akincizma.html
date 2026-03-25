@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKINCI ZMA</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+padding:60px 20px 40px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:35px auto;
+}
+
+.back-link{
+display:inline-block;
+margin-bottom:25px;
+color:#93c5fd;
+text-decoration:none;
+font-weight:bold;
+}
+
+.info-box{
+background:#1e293b;
+border-radius:18px;
+padding:22px;
+margin-bottom:26px;
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.info-box h2{
+color:#93c5fd;
+margin-bottom:12px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+margin-top:20px;
+margin-bottom:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:18px;
+cursor:pointer;
+transition:transform .25s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.95);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:95vw;
+max-height:95vh;
+border-radius:12px;
+}
+
+.lightbox-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+cursor:pointer;
+}
+
+.lightbox-prev{left:30px;}
+.lightbox-next{right:30px;}
+
+footer{
+text-align:center;
+padding:25px;
+margin-top:40px;
+color:#cbd5e1;
+background:#111827;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AKINCI ZMA</h1>
+</header>
+
+<div class="container">
+
+<a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+<div class="info-box">
+
+<h2>Genel Bilgi</h2>
+
+<p>
+AKINCI ZMA, FNSS tarafından geliştirilen paletli zırhlı muharebe aracı ailesinin modernize edilmiş
+versiyonlarından biridir. Araç, piyade birliklerinin zırhlı koruma altında muharebe alanına
+taşınması ve doğrudan ateş desteği sağlaması amacıyla geliştirilmiştir.
+</p>
+
+<br>
+
+<p>
+AKINCI ZMA platformu, ACV-15 zırhlı araç ailesinin geliştirilmiş versiyonu olarak kabul edilir
+ve Türk Kara Kuvvetleri'nin mekanize birliklerinde kullanılmaktadır. Araç,
+yüksek hareket kabiliyeti, amfibi özellikleri ve modüler silah sistemleri
+sayesinde farklı görev rollerine uyarlanabilmektedir.
+</p>
+
+<br>
+
+<p>
+Platform; piyade taşıyıcı, komuta aracı, keşif aracı, tanksavar aracı ve
+hava savunma platformu gibi farklı konfigürasyonlarda üretilebilmektedir.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<img src="images/akincizma1.jpg" onclick="resimAc(0)">
+<img src="images/akincizma2.jpg" onclick="resimAc(1)">
+<img src="images/akincizma3.jpg" onclick="resimAc(2)">
+
+</div>
+
+
+<div class="info-box">
+
+<h2>Teknik Özellikler</h2>
+
+<table style="width:100%; border-collapse:collapse; background:#0f172a">
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Sınıf</td>
+<td>Paletli Zırhlı Muharebe Aracı</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Üretici</td>
+<td>FNSS</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Platform</td>
+<td>ACV-15 türevi</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Mürettebat</td>
+<td>3 (Komutan, Nişancı, Sürücü)</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Taşınan Personel</td>
+<td>8 piyade</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Muharebe Ağırlığı</td>
+<td>14-18 ton</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Motor</td>
+<td>Dizel motor</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Motor Gücü</td>
+<td>300-350 hp</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Güç / Ağırlık Oranı</td>
+<td>20 hp/ton civarı</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Transmisyon</td>
+<td>Tam otomatik</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Azami Kara Hızı</td>
+<td>65 km/s</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Menzil</td>
+<td>500 km</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Amfibi Kabiliyet</td>
+<td>Var</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Azami Su Hızı</td>
+<td>6 km/s</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Süspansiyon</td>
+<td>Torsiyon bar</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Ana Silah</td>
+<td>25 mm otomatik top (varyanta göre değişebilir)</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">İkincil Silah</td>
+<td>7.62 mm makineli tüfek</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Kule</td>
+<td>Uzaktan komutalı veya insanlı kule seçenekleri</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Gece Görüş</td>
+<td>Termal kamera ve gece görüş sistemleri</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">NBC Koruma</td>
+<td>Var</td>
+</tr>
+
+<tr>
+<td style="padding:10px;color:#cbd5e1;">Görev Rolleri</td>
+<td>Piyade taşıyıcı, keşif, komuta, tanksavar, hava savunma</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<footer>
+AKINCI ZMA detay sayfası • Türk Savunma Sanayii Envanteri
+</footer>
+
+
+<div class="lightbox" id="lightbox">
+
+<div class="lightbox-arrow lightbox-prev" onclick="onceki()">❮</div>
+
+<img id="buyuk">
+
+<div class="lightbox-arrow lightbox-next" onclick="sonraki()">❯</div>
+
+</div>
+
+
+<script>
+
+const resimler=[
+"images/akincizma1.jpg",
+"images/akincizma2.jpg",
+"images/akincizma3.jpg"
+];
+
+let aktif=0;
+
+function resimAc(i){
+aktif=i;
+document.getElementById("buyuk").src=resimler[i];
+document.getElementById("lightbox").style.display="flex";
+}
+
+function sonraki(){
+aktif++;
+if(aktif>=resimler.length) aktif=0;
+document.getElementById("buyuk").src=resimler[aktif];
+}
+
+function onceki(){
+aktif--;
+if(aktif<0) aktif=resimler.length-1;
+document.getElementById("buyuk").src=resimler[aktif];
+}
+
+document.getElementById("lightbox").onclick=function(e){
+if(e.target.id==="lightbox"){
+this.style.display="none";
+}
+}
+
+</script>
+
+</body>
+</html>

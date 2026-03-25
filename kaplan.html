@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAPLAN</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KAPLAN</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        KAPLAN, FNSS tarafından geliştirilen yeni nesil paletli zırhlı araç ailesidir.
+        Platform ailesi; mekanize piyade, keşif, komuta-kontrol, kuvvet koruma, tıbbi tahliye,
+        kurtarma, muharebe mühendisliği ve doğrudan / dolaylı ateş desteği gibi çok geniş bir
+        görev yelpazesi için modüler şekilde tasarlanmıştır.
+      </p>
+      <br>
+      <p>
+        KAPLAN ailesi, insanlı veya insansız kule sistemleri, hafif ve orta kalibre silahlar,
+        120 mm havanlar ve tanksavar kule / silah sistemleri gibi çok farklı görev modüllerinin
+        entegre edilebilmesine imkan verir. Bu yapı, platformu tek tip bir araçtan çok modüler
+        bir görev ailesi haline getirir.
+      </p>
+      <br>
+      <p>
+        Araçta gelişmiş balistik koruma, mayın ve EYP koruması, aktif koruma sistemi opsiyonu,
+        otomatik yangın söndürme, klima, CBRN savunma önlemleri ve 360 derece durumsal farkındalık
+        kameraları gibi modern savaş alanı ihtiyaçlarına yönelik çözümler öne çıkmaktadır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/kaplan1.jpg" alt="KAPLAN görsel 1" onclick="resimAc(0)">
+      <img src="images/kaplan2.jpg" alt="KAPLAN görsel 2" onclick="resimAc(1)">
+      <img src="images/kaplan3.jpg" alt="KAPLAN görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yeni Nesil Paletli Zırhlı Muharebe Aracı</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">FNSS</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Araç Ailesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">KAPLAN APC / KAPLAN NG-AFV ailesi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mürettebat / Taşıma Kapasitesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">13 personel (nişancı, sürücü ve komutan dahil)</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Güç / Ağırlık Oranı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">22 hp/ton üzeri</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Görev Rolleri</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Mekanize piyade, keşif, komuta-kontrol, MEDEVAC, recovery, mühendislik, doğrudan / dolaylı ateş desteği</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Silah / Kule Entegrasyonu</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">İnsanlı ve insansız kuleler, hafif / orta kalibre silahlar, 120 mm havan, ATGM kuleleri</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Koruma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Balistik, mayın ve EYP tehditlerine karşı modüler koruma paketleri</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Aktif Koruma Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Tanksavar füzeleri ve RPG’lere karşı opsiyonel</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yangın Söndürme</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otomatik yangın söndürme sistemi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">İklimlendirme</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">A/C ünitesi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">CBRN</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kapalı ortam sağlayan CBRN savunma önlemleri</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Durumsal Farkındalık</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">360 derece gündüz / gece görüş kamerası altyapısı</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Muharebe Yönetim Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Battlefield Management System entegrasyonuna uygun</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Platform Yapısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Modüler görev ekipmanı entegrasyonuna uygun yeni nesil paletli şasi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Modernizasyon / Büyüme Potansiyeli</td>
+          <td style="padding:10px;">Farklı görev kitleri, kuleler, silah sistemleri ve koruma seviyeleri ile ölçeklenebilir yapı</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    KAPLAN detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş KAPLAN görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/kaplan1.jpg",
+      "images/kaplan2.jpg",
+      "images/kaplan3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index){
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim(){
+      aktifResim++;
+      if(aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(){
+      aktifResim--;
+      if(aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e){
+      if(e.target.id === "lightbox"){
+        this.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

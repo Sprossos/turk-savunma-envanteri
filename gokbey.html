@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T625 GÖKBEY</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .spec-table td {
+      padding: 10px;
+      border-bottom: 1px solid #475569;
+      vertical-align: top;
+    }
+
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec-table td:first-child {
+      color: #cbd5e1;
+      width: 36%;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-table td:first-child {
+        width: 44%;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>T625 GÖKBEY</h1>
+    <p>Türk Havacılık ve Uzay Sanayii tarafından geliştirilen, çok rollü genel maksat helikopteri.</p>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        T625 GÖKBEY, TUSAŞ tarafından geliştirilen çok rollü genel maksat helikopteridir. Platform;
+        sivil ve askerî kullanıcılar için geniş kabin hacmi, yüksek faydalı yük kapasitesi ve farklı
+        görev profillerine uyarlanabilen yapısıyla tasarlanmıştır.
+      </p>
+      <br>
+      <p>
+        TUSAŞ, GÖKBEY’in VIP taşıma, kargo taşıma, hava ambulans, arama-kurtarma ve offshore taşıma
+        görevlerinde kullanılabileceğini belirtmektedir. Helikopterin gece ve gündüz, zorlu iklim ve
+        coğrafya koşullarında görev yapabilmesi hedeflenmiştir.
+      </p>
+      <br>
+      <p>
+        Program kapsamında helikopterin ilk uçuşu 6 Eylül 2018’de gerçekleştirildi; daha sonra 20.000 ft
+        servis tavanına ulaşan testler ve teslimatlar kamuoyuna duyuruldu.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/gokbey1.jpg" alt="T625 GÖKBEY görsel 1" onclick="resimAc(0)">
+      <img src="images/gokbey2.jpg" alt="T625 GÖKBEY görsel 2" onclick="resimAc(1)">
+      <img src="images/gokbey3.jpg" alt="T625 GÖKBEY görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+
+      <table class="spec-table">
+        <tr>
+          <td>Platform Sınıfı</td>
+          <td>Çok rollü genel maksat helikopteri</td>
+        </tr>
+        <tr>
+          <td>Üretici</td>
+          <td>TUSAŞ / Turkish Aerospace</td>
+        </tr>
+        <tr>
+          <td>Görev Rolleri</td>
+          <td>VIP taşıma, kargo taşıma, hava ambulans, arama-kurtarma, offshore taşıma</td>
+        </tr>
+        <tr>
+          <td>Mürettebat</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Yolcu Kapasitesi</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>Toplam Kabin Düzeni</td>
+          <td>2 mürettebat + 12 yolcu</td>
+        </tr>
+        <tr>
+          <td>Uzunluk</td>
+          <td>15.87 m</td>
+        </tr>
+        <tr>
+          <td>Yükseklik</td>
+          <td>4.42 m</td>
+        </tr>
+        <tr>
+          <td>Ana Rotor Çapı</td>
+          <td>13.20 m</td>
+        </tr>
+        <tr>
+          <td>Azami Kalkış Ağırlığı</td>
+          <td>6050 kg</td>
+        </tr>
+        <tr>
+          <td>Motor Sayısı</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Motor Tipi</td>
+          <td>LHTEC CTS800-4AT-2A turboşaft</td>
+        </tr>
+        <tr>
+          <td>Motor Gücü</td>
+          <td>2 × 1014 kW / 2 × 1360 shp</td>
+        </tr>
+        <tr>
+          <td>Azami Hız</td>
+          <td>306 km/s</td>
+        </tr>
+        <tr>
+          <td>Menzil</td>
+          <td>740 km</td>
+        </tr>
+        <tr>
+          <td>Havada Kalış</td>
+          <td>3.8+ saat</td>
+        </tr>
+        <tr>
+          <td>Tırmanma Oranı</td>
+          <td>6.1 m/sn</td>
+        </tr>
+        <tr>
+          <td>Servis Tavanı</td>
+          <td>20.000 ft</td>
+        </tr>
+        <tr>
+          <td>Uçuş Koşulları</td>
+          <td>Gece ve gündüz görev icrası</td>
+        </tr>
+        <tr>
+          <td>Operasyon Yeteneği</td>
+          <td>Zorlu iklim ve coğrafya koşullarında, yüksek irtifa ve sıcaklıkta görev yapabilme</td>
+        </tr>
+        <tr>
+          <td>Kabin Özelliği</td>
+          <td>Geniş kabin hacmi</td>
+        </tr>
+        <tr>
+          <td>Faydalı Yük Özelliği</td>
+          <td>Yüksek faydalı yük kapasitesi</td>
+        </tr>
+        <tr>
+          <td>Aviyonik Yaklaşımı</td>
+          <td>Gelişmiş aviyonikler ve kullanıcı odaklı tasarım</td>
+        </tr>
+        <tr>
+          <td>Kullanıcı Profili</td>
+          <td>Sivil ve askerî kullanıcılar</td>
+        </tr>
+        <tr>
+          <td>Program Durumu</td>
+          <td>Test, sertifikasyon ve teslimat süreci kamuya açık şekilde duyurulmuştur</td>
+        </tr>
+        <tr>
+          <td>İlk Uçuş</td>
+          <td>6 Eylül 2018</td>
+        </tr>
+        <tr>
+          <td>Öne Çıkan Özellik</td>
+          <td>Yerli genel maksat helikopteri olarak geniş kabin, yüksek faydalı yük ve çok görevli kullanım kombinasyonu</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    T625 GÖKBEY detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş T625 GÖKBEY görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/gokbey1.jpg",
+      "images/gokbey2.jpg",
+      "images/gokbey3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim() {
+      aktifResim++;
+      if (aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim() {
+      aktifResim--;
+      if (aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e) {
+      if (e.target.id === "lightbox") {
+        this.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

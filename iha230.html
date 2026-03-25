@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İHA-230 Havadan Karaya Balistik Süpersonik Füze</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+  padding:70px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:44px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:40px auto;
+}
+
+.back{
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  margin-bottom:25px;
+}
+
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.box h2{
+  color:#93c5fd;
+  margin-bottom:12px;
+}
+
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.spec-card{
+  background:#0f172a;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.spec-card h3{
+  color:#60a5fa;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 10px 24px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+  background:#0f172a;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+td{
+  padding:10px;
+  border-bottom:1px solid #475569;
+  vertical-align:top;
+}
+
+tr:last-child td{
+  border-bottom:none;
+}
+
+td:first-child{
+  color:#cbd5e1;
+  width:40%;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111827;
+  margin-top:50px;
+  color:#cbd5e1;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:60px;
+  color:white;
+  cursor:pointer;
+  user-select:none;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(0,0,0,0.2);
+}
+
+.arrow:hover{
+  color:#60a5fa;
+  background:rgba(37,99,235,0.25);
+}
+
+.prev{
+  left:30px;
+}
+
+.next{
+  right:30px;
+}
+
+@media(max-width:900px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .arrow{
+    font-size:40px;
+    padding:10px;
+  }
+
+  .prev{
+    left:10px;
+  }
+
+  .next{
+    right:10px;
+  }
+
+  td:first-child{
+    width:46%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>İHA-230</h1>
+  <p>Havadan Karaya Balistik Süpersonik Füze</p>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      İHA-230, insansız hava araçları üzerinden kullanılmak üzere geliştirilen havadan karaya balistik
+      süpersonik füzedir. Gece ve gündüz operasyon yapabilmesi sayesinde farklı görev ortamlarında
+      etkili şekilde kullanılabilir.
+    </p>
+
+    <br>
+
+    <p>
+      Sistem; sabit kara hedefleri, sabit deniz hedefleri, hava savunma radarları, haberleşme sistemleri,
+      hafif zırhlı kara veya deniz araçları, komuta merkezleri, toplu personel alanları ve fırsat
+      hedeflerine karşı etkin güç oluşturmak üzere tasarlanmıştır.
+    </p>
+
+    <br>
+
+    <p>
+      İHA-230’un insansız hava araçlarıyla kullanılması, stand-off vuruş ve hızlı hassas angajman
+      kabiliyetini artırmaktadır. Füze, koordinata güdüm yaklaşımıyla görev yaparken terminal safhada
+      opsiyonel lazer arayıcı başlık desteği de sunabilir.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Temel Özellikler</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Menzil</h3>
+        <p>150 km</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Uzunluk</h3>
+        <p>3.4 m</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Ağırlık</h3>
+        <p>230 kg</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Çap</h3>
+        <p>230 mm</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>CEP</h3>
+        <p>≤ 10 m</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Platform</h3>
+        <p>İnsansız Hava Araçları</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Teknik Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Füze Tipi</td>
+        <td>Havadan karaya balistik süpersonik füze</td>
+      </tr>
+
+      <tr>
+        <td>Adı</td>
+        <td>İHA-230</td>
+      </tr>
+
+      <tr>
+        <td>Görev Alanı</td>
+        <td>İHA platformlarından hassas kara ve deniz hedefi angajmanı</td>
+      </tr>
+
+      <tr>
+        <td>Menzil</td>
+        <td>150 km</td>
+      </tr>
+
+      <tr>
+        <td>Uzunluk</td>
+        <td>3.4 m</td>
+      </tr>
+
+      <tr>
+        <td>Ağırlık</td>
+        <td>230 kg</td>
+      </tr>
+
+      <tr>
+        <td>Çap</td>
+        <td>230 mm</td>
+      </tr>
+
+      <tr>
+        <td>Güdüm</td>
+        <td>Koordinata güdüm sistemi</td>
+      </tr>
+
+      <tr>
+        <td>Terminal Güdüm</td>
+        <td>Opsiyonel lazer arayıcı başlık</td>
+      </tr>
+
+      <tr>
+        <td>Harp Başlığı</td>
+        <td>Ön şekillendirilmiş parçacık etkili harp başlığı</td>
+      </tr>
+
+      <tr>
+        <td>CEP Değeri</td>
+        <td>≤ 10 m</td>
+      </tr>
+
+      <tr>
+        <td>Platformlar</td>
+        <td>İnsansız hava araçları</td>
+      </tr>
+
+      <tr>
+        <td>Karıştırmaya Dayanım</td>
+        <td>Karıştırmaya karşı dayanıklı</td>
+      </tr>
+
+      <tr>
+        <td>Görev Koşulları</td>
+        <td>Gece ve gündüz operasyon yapabilme</td>
+      </tr>
+
+      <tr>
+        <td>Öne Çıkan Özellik</td>
+        <td>İHA platformlarından atılabilen, 150 km sınıfında yerli balistik süpersonik hassas vuruş mühimmatı</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Hedef Seti ve Operasyonel Kullanım</h2>
+
+    <table>
+      <tr>
+        <td>Sabit Kara Hedefleri</td>
+        <td>Koordinatı bilinen kara hedefleri</td>
+      </tr>
+
+      <tr>
+        <td>Sabit Deniz Hedefleri</td>
+        <td>Deniz üzerindeki sabit hedefler</td>
+      </tr>
+
+      <tr>
+        <td>Radar ve Haberleşme</td>
+        <td>Hava savunma radarları ve haberleşme sistemleri</td>
+      </tr>
+
+      <tr>
+        <td>Hafif Zırhlı Araçlar</td>
+        <td>Hafif zırhlı kara veya deniz araçları</td>
+      </tr>
+
+      <tr>
+        <td>Kritik Tesisler</td>
+        <td>Komuta merkezi gibi kritik tesisler</td>
+      </tr>
+
+      <tr>
+        <td>Personel Hedefleri</td>
+        <td>Toplu personel hedefleri</td>
+      </tr>
+
+      <tr>
+        <td>Fırsat Hedefleri</td>
+        <td>Görev sırasında oluşan fırsat hedefleri</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Görseller</h2>
+
+    <div class="gallery">
+      <img src="images/iha230_1.jpg" alt="İHA-230 görsel 1" onclick="openImg(0)">
+      <img src="images/iha230_2.jpg" alt="İHA-230 görsel 2" onclick="openImg(1)">
+      <img src="images/iha230_3.jpg" alt="İHA-230 görsel 3" onclick="openImg(2)">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+İHA-230 Havadan Karaya Balistik Süpersonik Füze • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="arrow prev" onclick="prevImg()">❮</span>
+  <img id="lightbox-img" alt="Büyütülmüş İHA-230 görseli">
+  <span class="arrow next" onclick="nextImg()">❯</span>
+</div>
+
+<script>
+const images = [
+  "images/iha230_1.jpg",
+  "images/iha230_2.jpg",
+  "images/iha230_3.jpg"
+];
+
+let index = 0;
+
+function openImg(i){
+  index = i;
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function nextImg(){
+  index++;
+  if(index >= images.length){
+    index = 0;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function prevImg(){
+  index--;
+  if(index < 0){
+    index = images.length - 1;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    this.style.display = "none";
+  }
+}
+
+document.addEventListener("keydown", function(e){
+  const lightbox = document.getElementById("lightbox");
+  if(lightbox.style.display === "flex"){
+    if(e.key === "ArrowRight") nextImg();
+    if(e.key === "ArrowLeft") prevImg();
+    if(e.key === "Escape") lightbox.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COBRA II</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>COBRA II</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        COBRA II, Otokar tarafından geliştirilen 4x4 taktik tekerlekli zırhlı araçtır.
+        Araç; yüksek balistik ve mayın koruması, artırılmış taşıma kapasitesi ve daha geniş
+        iç hacmi ile önceki COBRA platformunun geliştirilmiş nesli olarak öne çıkar.
+      </p>
+      <br>
+      <p>
+        Otokar’ın resmî tanıtımında COBRA II’nin çok farklı görevlerde kullanılabilecek modüler
+        bir platform olduğu belirtilir. Zırhlı personel taşıyıcı, komuta kontrol aracı, iç güvenlik
+        aracı, tanksavar füze aracı, jammer platformu, havan tespit radarı aracı, ambulans / tıbbi
+        tahliye aracı ve kurtarıcı araç gibi çok sayıda varyant bulunur.
+      </p>
+      <br>
+      <p>
+        Platform; zorlu arazi ve iklim koşullarında yüksek hareket kabiliyeti sağlamak üzere tam
+        bağımsız süspansiyon, güçlü dizel motor, run-flat lastikler ve merkezi lastik şişirme sistemi
+        ile donatılmıştır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/cobra2_1.jpg" alt="COBRA II görsel 1" onclick="resimAc(0)">
+      <img src="images/cobra2_2.jpg" alt="COBRA II görsel 2" onclick="resimAc(1)">
+      <img src="images/cobra2_3.jpg" alt="COBRA II görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">4x4 Taktik Tekerlekli Zırhlı Araç</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otokar</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Araç Ağırlığı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">14.500 kg</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Personel Kapasitesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">11 kişi, sürücü ve komutan dahil</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uzunluk</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">6400 mm (vinç ve yedek lastik dahil)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Genişlik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2500 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yükseklik (Gövde Üstü)</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2300 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Karınaltı Yüksekliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">400 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Turbo şarjlı dizel motor</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor Gücü</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">360 bg</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Transmisyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otomatik</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Transfer Kutusu</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2 hızlı, boyuna kilitli</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Akslar</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Diferansiyel kilitli ve dişli poyralı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Süspansiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Helisel yaylı, lineer damperli tam bağımsız</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Frenler</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">ABS özellikli çift devreli disk fren</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Direksiyon Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Hidrolik takviyeli ayarlanabilir direksiyon</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Lastikler</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Merkezi lastik şişirme sistemli, run-flat radyal lastikler</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Hız</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">110 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menzil</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">700 km</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Ford Derinliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">1100 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yan Eğim</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">30%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Tırmanma Kabiliyeti</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">60%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Dikey Engel Aşma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">500 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Hendek Geçişi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">900 mm</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Koruma Özelliği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yüksek balistik ve mayın koruması</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Standart Özellikler</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">CTIS, run-flat lastikler, ABS, iklimlendirme sistemi, 5 nokta emniyet kemeri, sürücü ve komutan için ayarlanabilir koltuklar, yüzer taban, tavan klapeleri, atış mazgalları, çekme halkaları, blackout aydınlatma</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Araç Elektroniği</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">ARMATRONICS araç elektroniği, sürücü görüş iyileştirme sistemi, sürücü entegre ekranı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Opsiyonlar</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kış kiti, kendini kurtarma vinci, CBRN filtrasyon sistemi, otomatik yangın söndürme ve patlama bastırma, telsiz/interkom, duman lançerleri, APU, durumsal farkındalık sistemi, komutan entegre ekranı, GPS/INS, rampalı kapı, barikat sökücü</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Görev Varyantları</td>
+          <td style="padding:10px;">Zırhlı personel taşıyıcı, komuta kontrol, iç güvenlik, ambulans / tıbbi tahliye, jammer, havan tespit radarı, kurtarıcı, tanksavar füze aracı, uçaksavar füze platformu</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    COBRA II detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş COBRA II görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/cobra2_1.jpg",
+      "images/cobra2_2.jpg",
+      "images/cobra2_3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index){
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim(){
+      aktifResim++;
+      if(aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(){
+      aktifResim--;
+      if(aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e){
+      if(e.target.id === "lightbox"){
+        this.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

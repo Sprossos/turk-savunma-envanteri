@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EJDER KUNTER 4x4</title>
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+      padding:60px 20px 40px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    header p{
+      max-width:900px;
+      margin:0 auto;
+      color:#dbeafe;
+      font-size:18px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:35px auto;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-bottom:24px;
+      color:#93c5fd;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .info-box{
+      background:#1e293b;
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:26px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2{
+      color:#93c5fd;
+      margin-bottom:12px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-bottom:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      cursor:pointer;
+      transition:transform .25s;
+      box-shadow:0 10px 24px rgba(0,0,0,0.28);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    .spec-table{
+      width:100%;
+      border-collapse:collapse;
+      background:#0f172a;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .spec-table td{
+      padding:10px;
+      border-bottom:1px solid #475569;
+      vertical-align:top;
+    }
+
+    .spec-table tr:last-child td{
+      border-bottom:none;
+    }
+
+    .spec-table td:first-child{
+      color:#cbd5e1;
+      width:38%;
+      font-weight:600;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+      background:#111827;
+      color:#cbd5e1;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.96);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+      backdrop-filter:blur(6px);
+    }
+
+    .lightbox img{
+      max-width:95vw;
+      max-height:95vh;
+      border-radius:12px;
+    }
+
+    .lightbox-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:60px;
+      cursor:pointer;
+      padding:10px 18px;
+      background:rgba(0,0,0,0.25);
+      border-radius:10px;
+      user-select:none;
+    }
+
+    .lightbox-prev{left:30px;}
+    .lightbox-next{right:30px;}
+
+    @media(max-width:900px){
+      .gallery{grid-template-columns:1fr;}
+      .spec-table td:first-child{width:46%;}
+      .lightbox-arrow{font-size:40px;}
+      .lightbox-prev{left:10px;}
+      .lightbox-next{right:10px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>EJDER KUNTER 4x4</h1>
+  <p>Nurol Makina tarafından geliştirilen özel amaçlı platform ve lojistik destek aracı.</p>
+</header>
+
+<div class="container">
+
+  <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="info-box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      EJDER KUNTER 4x4, Nurol Makina tarafından özgün olarak tasarlanmış özel amaçlı bir platformdur.
+      Araç; askeri, iç güvenlik ve sivil kullanımlar için farklı konfigürasyonlara uyarlanabilecek
+      şekilde geliştirilmiştir.
+    </p>
+
+    <br>
+
+    <p>
+      Platform, 4x4 çekiş düzeni ve tam bağımsız süspansiyon sistemi sayesinde hem şehir içinde
+      hem de kırsal alanlarda, farklı arazi koşullarında etkin görev yapabilecek bir hareket
+      kabiliyeti sunar.
+    </p>
+
+    <br>
+
+    <p>
+      Sistem tasarımı kullanıcı gereksinimlerine göre yapılandırılabilmekte; ateş destek modülü,
+      özel görev ekipmanları ve farklı platform çözümleri entegre edilebilmektedir.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/ejderkunter1.jpg" alt="EJDER KUNTER 4x4 görsel 1" onclick="resimAc(0)">
+    <img src="images/ejderkunter2.jpg" alt="EJDER KUNTER 4x4 görsel 2" onclick="resimAc(1)">
+    <img src="images/ejderkunter3.jpg" alt="EJDER KUNTER 4x4 görsel 3" onclick="resimAc(2)">
+  </div>
+
+  <div class="info-box">
+    <h2>Teknik Özellikler</h2>
+
+    <table class="spec-table">
+
+      <tr><td>Platform Sınıfı</td><td>Özel Amaçlı Platform / Lojistik Destek Aracı</td></tr>
+      <tr><td>Üretici</td><td>Nurol Makina</td></tr>
+      <tr><td>Şasi Yapısı</td><td>Özgün / yerli şasi</td></tr>
+      <tr><td>Tahrik Düzeni</td><td>4x4</td></tr>
+      <tr><td>Süspansiyon</td><td>Tam bağımsız süspansiyon sistemi</td></tr>
+
+      <tr><td>Kullanım Alanı</td><td>Askeri, iç güvenlik ve sivil kullanım</td></tr>
+      <tr><td>Görev Profili</td><td>Lojistik destek, özel görev ekipmanı taşıma, modüler platform görevi</td></tr>
+      <tr><td>Konfigürasyon Yeteneği</td><td>Kullanıcı ihtiyacına göre yapılandırılabilir sistem tasarımı</td></tr>
+      <tr><td>Özel Görev Ekipmanı</td><td>Ateş destek modülü ve özel platform çözümleri entegre edilebilir</td></tr>
+
+      <tr><td>Kabin Koruması</td><td>Yüksek balistik korumalı kabin</td></tr>
+      <tr><td>Personel Kapasitesi</td><td>14 personele kadar</td></tr>
+      <tr><td>Sürücü ve Operatör Alanı</td><td>Ayarlanabilir ergonomik sürücü ve operatör koltuğu</td></tr>
+
+      <tr><td>Direksiyon Sistemi</td><td>Hidrolik güç destekli direksiyon</td></tr>
+      <tr><td>Diferansiyel</td><td>Kilitlenebilir enlemesine ve boylamasına diferansiyel kilitleri</td></tr>
+      <tr><td>Lastik Yapısı</td><td>Geniş tabanlı, büyük çaplı lastikler</td></tr>
+      <tr><td>Fren Sistemi</td><td>ABS destekli fren sistemi</td></tr>
+
+      <tr><td>Yaklaşma / Uzaklaşma Açıları</td><td>Yüksek yaklaşma ve uzaklaşma açıları</td></tr>
+      <tr><td>Su Geçişi</td><td>0,9 m</td></tr>
+      <tr><td>Dik Engel Aşma</td><td>0,5 m</td></tr>
+      <tr><td>Yan Eğim</td><td>%30</td></tr>
+      <tr><td>Tırmanma Kabiliyeti</td><td>%30</td></tr>
+      <tr><td>Hendek Geçişi</td><td>0,9 m</td></tr>
+
+      <tr><td>Çalışma Sıcaklığı</td><td>-32°C ile +55°C</td></tr>
+      <tr><td>Arazi Kabiliyeti</td><td>Kentsel ve kırsal alanlarda, her türlü arazi koşulunda etkin görev</td></tr>
+
+      <tr><td>Bakım Yaklaşımı</td><td>Görev ihtiyaçlarına göre uyarlanabilir platform mantığı</td></tr>
+      <tr><td>Platform Rolü</td><td>Özel görev ekipmanları için taşıyıcı altyapı</td></tr>
+      <tr><td>Öne Çıkan Özellik</td><td>4x4 hareket kabiliyeti, bağımsız süspansiyon ve modüler görev uyarlaması bir arada</td></tr>
+
+    </table>
+  </div>
+
+</div>
+
+<footer>
+EJDER KUNTER 4x4 detay sayfası • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-arrow lightbox-prev" onclick="onceki()">❮</div>
+  <img id="lightbox-img" alt="Büyütülmüş EJDER KUNTER 4x4 görseli">
+  <div class="lightbox-arrow lightbox-next" onclick="sonraki()">❯</div>
+</div>
+
+<script>
+const resimler = [
+  "images/ejderkunter1.jpg",
+  "images/ejderkunter2.jpg",
+  "images/ejderkunter3.jpg"
+];
+
+let aktif = 0;
+
+function resimAc(i){
+  aktif = i;
+  document.getElementById("lightbox-img").src = resimler[i];
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function sonraki(){
+  aktif++;
+  if(aktif >= resimler.length) aktif = 0;
+  document.getElementById("lightbox-img").src = resimler[aktif];
+}
+
+function onceki(){
+  aktif--;
+  if(aktif < 0) aktif = resimler.length - 1;
+  document.getElementById("lightbox-img").src = resimler[aktif];
+}
+
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    this.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

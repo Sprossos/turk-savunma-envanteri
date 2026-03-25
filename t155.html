@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T-155 Fırtına</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>T-155 Fırtına</h1>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        T-155 Fırtına, Türk Kara Kuvvetleri için geliştirilen 155 mm sınıfında kundağı motorlu obüs sistemidir.
+        Platform, hareketli topçu unsurlarına yüksek ateş desteği sağlamak ve modern kara harekâtlarında
+        süratli konuşlanma ile atış kabiliyeti sunmak amacıyla kullanılmaktadır.
+      </p>
+      <br>
+      <p>
+        Sistem; otomatik atış kontrolü, yüksek hareket kabiliyeti, gece görev yeteneği ve zırhlı gövde yapısıyla
+        topçu birliklerinin etkinliğini artıran önemli platformlardan biridir. Fırtına ailesi, Türk savunma
+        sanayiinde topçu sistemleri alanında öne çıkan ana kara platformlarından biri olarak kabul edilir.
+      </p>
+      <br>
+      <p>
+        T-155 Fırtına, 155 mm / 52 kalibre top sistemiyle donatılmıştır ve modern obüs sınıfında değerlendirilmektedir.
+        Gelişmiş otomasyon ve saha şartlarına uygun taşıyıcı yapı sayesinde hızlı mevzilenme ve görev icrası sağlar.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/t1551.jpg" alt="T-155 Fırtına görsel 1" onclick="resimAc(0)">
+      <img src="images/t1552.jpg" alt="T-155 Fırtına görsel 2" onclick="resimAc(1)">
+      <img src="images/t1553.jpg" alt="T-155 Fırtına görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kundağı Motorlu Obüs</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">MKE</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Kalibre / Namlu</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">155 mm / 52 kalibre</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Savaş Ağırlığı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">47 ton</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uzunluk</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">12 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Genişlik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">3.4 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Yükseklik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">3.43 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mürettebat</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">5</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Hız</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 65 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Harekât Menzili</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 360 km</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor Gücü</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 1000 bg</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Güç / Ağırlık Oranı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 21 bg/ton</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Süspansiyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Hidro-pnömatik süspansiyon</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Atış Kontrolü</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otomatik</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mermi Doldurma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Otomatik</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mühimmat Kapasitesi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 48 adet 155 mm mühimmat</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Atış Hızı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Kısa sürede yüksek atım / otomatik yükleme desteği</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Atış Menzili</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Mühimmat tipine bağlı olarak yaklaşık 18–40 km+</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Atış Açısı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Geniş yükseliş ve yan yönlendirme kabiliyeti</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Namlu Yükseliş Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Hidrolik / otomatik kontrollü</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Haberleşme / Entegrasyon</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">ADOP-2000 ile sayısal entegrasyon</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Telsiz Sistemi</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">ASELSAN 9600 serisi frekans atlamalı sayısal telsizler</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Zırhlı Koruma</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Mürettebatı koruyan zırhlı gövde</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Gece Görüşü</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Var</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mürettebat Destek Sistemleri</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">İç haberleşme, otomasyon ve görev destek alt sistemleri</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">NBC Koruma</td>
+          <td style="padding:10px;">Var</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    T-155 Fırtına detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim(event)">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş T-155 Fırtına görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim(event)">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/t1551.jpg",
+      "images/t1552.jpg",
+      "images/t1553.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = resimler[aktifResim];
+      lightbox.style.display = "flex";
+    }
+
+    function kapat() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function sonrakiResim(event) {
+      event.stopPropagation();
+      aktifResim++;
+      if (aktifResim >= resimler.length) {
+        aktifResim = 0;
+      }
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(event) {
+      event.stopPropagation();
+      aktifResim--;
+      if (aktifResim < 0) {
+        aktifResim = resimler.length - 1;
+      }
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").addEventListener("click", function(e) {
+      if (e.target.id === "lightbox") {
+        kapat();
+      }
+    });
+  </script>
+</body>
+</html>

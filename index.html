@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Türkiye Savunma Sanayii Envanteri</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(
+        180deg,
+        #0f172a 0%,
+        #020617 100%
+      );
+      color: white;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(15, 23, 42, 0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .menu a:hover {
+      color: #93c5fd;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e3a8a 40%,
+        #334155 75%,
+        #0f172a 100%
+      );
+      padding: 70px 20px 55px;
+      text-align: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 320px;
+      background: radial-gradient(
+        circle,
+        rgba(59,130,246,0.28),
+        transparent 70%
+      );
+      filter: blur(85px);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0) 0%,
+        #0f172a 100%
+      );
+      pointer-events: none;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto 20px;
+      color: #dbeafe;
+    }
+
+    .hero-buttons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .hero-buttons button {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: 0 8px 18px rgba(37,99,235,0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37,99,235,0.35);
+      opacity: 0.98;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin: 30px 0 18px;
+      color: #bfdbfe;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.92);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(147,197,253,0.18);
+    }
+
+    .card h3 {
+      color: #60a5fa;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #e2e8f0;
+      font-size: 15px;
+    }
+
+    .detail-button {
+      margin-top: 15px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 8px 18px rgba(37,99,235,0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    .detail-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37,99,235,0.35);
+      opacity: 0.98;
+    }
+
+    .detail-box {
+      display: none;
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #0f172a, #111827);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 10px 24px rgba(0,0,0,0.28);
+      color: #f8fafc;
+      font-size: 14px;
+      animation: fadeDown 0.25s ease;
+    }
+
+    .detail-box strong {
+      display: block;
+      position: relative;
+      padding-left: 12px;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      color: #bfdbfe;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .detail-box strong:first-child {
+      margin-top: 0;
+    }
+
+    .detail-box strong::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 4px;
+      height: 16px;
+      border-radius: 999px;
+      background: #60a5fa;
+    }
+
+    .detail-box ul {
+      margin-top: 4px !important;
+      margin-bottom: 8px;
+      padding-left: 18px !important;
+      line-height: 1.9 !important;
+    }
+
+    .detail-box ul li {
+      margin-bottom: 2px;
+      color: #e2e8f0;
+    }
+
+    .detail-box ul li::marker {
+      color: #60a5fa;
+    }
+
+    .detail-box ul li a {
+      color: #93c5fd !important;
+      font-weight: 600 !important;
+      text-decoration: none;
+      transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .detail-box ul li a:hover {
+      color: #dbeafe !important;
+      padding-left: 3px;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: rgba(17, 24, 39, 0.95);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="menu">
+        <a href="#sistemler">Sistemler</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Türk Savunma Sanayii Envanteri</h1>
+    <p>
+      Türk savunma sanayiindeki kara, deniz ve hava araçlarını merak edenler için hazırlanmış kısa teknik bilgiler ve tanıtım rehberi.
+    </p>
+    <div class="hero-buttons">
+      <button class="primary-btn" onclick="sayfayaGit('sistemler')">Veritabanını İncele</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title" id="sistemler">Ana Sistem Kategorileri</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🚜 Kara Araçları</h3>
+        <p>Tanklar, zırhlı araçlar ve diğer kara sistemleri bu bölümde tanıtılır.</p>
+        <button class="detail-button" onclick="detayGoster('kara')">Detay Göster</button>
+        <div class="detail-box" id="kara">
+
+          <strong>Ana Muharebe Tankı</strong>
+          <ul>
+            <li><a href="altay.html">ALTAY</a></li>
+          </ul>
+
+          <strong>Modernize Ana Muharebe Tankı</strong>
+          <ul>
+            <li><a href="m60t.html">M60T</a></li>
+          </ul>
+
+          <strong>Kundağı Motorlu Obüs</strong>
+          <ul>
+            <li><a href="t155.html">T-155 Fırtına</a></li>
+            <li><a href="firtina2.html">Fırtına II</a></li>
+          </ul>
+
+          <strong>Paletli Zırhlı Araçlar</strong>
+          <ul>
+            <li><a href="acv15.html">ACV-15</a></li>
+            <li><a href="acv19.html">ACV-19</a></li>
+            <li><a href="kaplan.html">KAPLAN</a></li>
+            <li><a href="kaplan10.html">KAPLAN 10</a></li>
+            <li><a href="kaplansta.html">KAPLAN STA</a></li>
+            <li><a href="kaplanmt.html">KAPLAN MT</a></li>
+            <li><a href="zaha.html">ZAHA</a></li>
+            <li><a href="akincizma.html">AKINCI ZMA</a></li>
+          </ul>
+
+          <strong>Tekerlekli Zırhlı Araçlar</strong>
+          <ul>
+            <li><a href="pars8x8.html">PARS 8x8</a></li>
+            <li><a href="pars6x6.html">PARS 6x6</a></li>
+            <li><a href="pars4x4.html">PARS 4x4</a></li>
+            <li><a href="parsizci8x8.html">PARS İzci 8x8</a></li>
+            <li><a href="parsizci6x6.html">PARS İzci 6x6</a></li>
+            <li><a href="parsiv8x8.html">PARS IV 8x8</a></li>
+            <li><a href="parsiv6x6.html">PARS IV 6x6</a></li>
+            <li><a href="parsalpha8x8.html">PARS ALPHA 8x8</a></li>
+            <li><a href="arma8x8.html">ARMA 8x8</a></li>
+            <li><a href="cobra.html">COBRA</a></li>
+            <li><a href="cobra2.html">COBRA II</a></li>
+            <li><a href="akrep2.html">AKREP II</a></li>
+            <li><a href="vuran.html">VURAN</a></li>
+            <li><a href="kirpi.html">KİRPİ</a></li>
+            <li><a href="kirpi2.html">KİRPİ II</a></li>
+            <li><a href="ejderyalcin.html">EJDER YALÇIN</a></li>
+            <li><a href="yoruk.html">NMS 4x4 / YÖRÜK 4x4</a></li>
+            <li><a href="nmsl.html">NMS-L 4x4</a></li>
+            <li><a href="ilgaz.html">ILGAZ 4x4</a></li>
+            <li><a href="hizir.html">HIZIR</a></li>
+            <li><a href="amazon.html">AMAZON</a></li>
+          </ul>
+
+          <strong>Özel Amaçlı / İç Güvenlik Araçları</strong>
+          <ul>
+            <li><a href="ejdertoma.html">EJDER TOMA 4x4</a></li>
+            <li><a href="ejderkunter.html">EJDER KUNTER 4x4</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>✈️ Hava Araçları</h3>
+        <p>Savaş uçakları, helikopterler ve insansız hava araçları bu alanda anlatılır.</p>
+        <button class="detail-button" onclick="detayGoster('hava')">Detay Göster</button>
+        <div class="detail-box" id="hava">
+
+          <strong>Eğitim Uçağı</strong>
+          <ul>
+            <li><a href="hurkus.html">HÜRKUŞ</a></li>
+          </ul>
+
+          <strong>Taarruz Helikopteri</strong>
+          <ul>
+            <li><a href="t129atak.html">T129 ATAK</a></li>
+          </ul>
+
+          <strong>Genel Maksat Helikopteri</strong>
+          <ul>
+            <li><a href="gokbey.html">T625 GÖKBEY</a></li>
+          </ul>
+
+          <strong>İnsansız Hava Aracı (İHA / SİHA / TİHA)</strong>
+          <ul>
+            <li><a href="anka.html">ANKA</a></li>
+            <li><a href="aksungur.html">AKSUNGUR</a></li>
+            <li><a href="tb2.html">Bayraktar TB2</a></li>
+            <li><a href="akinci.html">Bayraktar AKINCI</a></li>
+            <li><a href="miniiha.html">Bayraktar Mini İHA</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🚢 Deniz Araçları</h3>
+        <p>Korvetler, fırkateynler, denizaltılar ve deniz platformları burada yer alır.</p>
+        <button class="detail-button" onclick="detayGoster('deniz')">Detay Göster</button>
+        <div class="detail-box" id="deniz">
+
+          <strong>Fırkateyn</strong>
+          <ul>
+            <li><a href="tcgistanbul.html">TCG İstanbul (F-515)</a></li>
+          </ul>
+
+          <strong>Korvet</strong>
+          <ul>
+            <li><a href="tcgheybeliada.html">TCG Heybeliada (F-511)</a></li>
+            <li><a href="tcgbuyukada.html">TCG Büyükada (F-512)</a></li>
+            <li><a href="tcgburgazada.html">TCG Burgazada (F-513)</a></li>
+            <li><a href="tcgkinaliada.html">TCG Kınalıada (F-514)</a></li>
+          </ul>
+
+          <strong>Karakol Gemisi / Açık Deniz Karakol Botu</strong>
+          <ul>
+            <li><a href="tcgtuzla.html">TCG Tuzla (P-1200)</a></li>
+            <li><a href="tcgkaraburun.html">TCG Karaburun (P-1201)</a></li>
+            <li><a href="tcgkoycegiz.html">TCG Köyceğiz (P-1202)</a></li>
+            <li><a href="tcgkumkale.html">TCG Kumkale (P-1203)</a></li>
+            <li><a href="tcgtarsus.html">TCG Tarsus (P-1204)</a></li>
+            <li><a href="tcgkarabiga.html">TCG Karabiga (P-1205)</a></li>
+            <li><a href="tcgkarsiyaka.html">TCG Karşıyaka (P-1206)</a></li>
+            <li><a href="tcgtekirdag.html">TCG Tekirdağ (P-1207)</a></li>
+            <li><a href="tcgkas.html">TCG Kaş (P-1208)</a></li>
+            <li><a href="tcgkilimli.html">TCG Kilimli (P-1209)</a></li>
+            <li><a href="tcgturkeli.html">TCG Türkeli (P-1210)</a></li>
+            <li><a href="tcgtasucu.html">TCG Taşucu (P-1211)</a></li>
+            <li><a href="tcgkaratas.html">TCG Karataş (P-1212)</a></li>
+            <li><a href="tcgkarpaz.html">TCG Karpaz (P-1213)</a></li>
+            <li><a href="tcgkaradenizeregli.html">TCG Karadeniz Ereğli (P-1214)</a></li>
+            <li><a href="tcgkusadasi.html">TCG Kuşadası (P-1215)</a></li>
+          </ul>
+
+          <strong>Tank Çıkarma Gemisi (LST)</strong>
+          <ul>
+            <li><a href="tcgbayraktar.html">TCG Bayraktar (L-402)</a></li>
+            <li><a href="tcgsancaktar.html">TCG Sancaktar (L-403)</a></li>
+          </ul>
+
+          <strong>Denizaltı Kurtarma Ana Gemisi</strong>
+          <ul>
+            <li><a href="tcgalemdar.html">TCG Alemdar (A-582)</a></li>
+          </ul>
+
+          <strong>Test / Eğitim / İstihbarat Gemisi</strong>
+          <ul>
+            <li><a href="tcgufuk.html">TCG Ufuk (A-591)</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Füze Sistemleri</h3>
+        <p>Bu bölümde sadece genel ve kamuya açık tanıtım bilgileri yer alır.</p>
+        <button class="detail-button" onclick="detayGoster('fuze')">Detay Göster</button>
+        <div class="detail-box" id="fuze">
+
+          <strong>Hava Savunma Füze Sistemleri</strong>
+          <ul>
+            <li><a href="sungur.html">SUNGUR</a></li>
+            <li><a href="hisara.html">HİSAR-A+</a></li>
+            <li><a href="hisaro.html">HİSAR-O+</a></li>
+            <li><a href="hisarrf.html">HİSAR-RF</a></li>
+            <li><a href="siper.html">SİPER</a></li>
+          </ul>
+
+          <strong>Kara Hedeflerine Karşı Füze ve Roket Sistemleri</strong>
+          <ul>
+            <li><a href="bora.html">BORA</a></li>
+            <li><a href="karaatmaca.html">KARA ATMACA</a></li>
+            <li><a href="trg122.html">TRG-122</a></li>
+            <li><a href="trlg122.html">TRLG-122</a></li>
+            <li><a href="trg230.html">TRG-230</a></li>
+            <li><a href="trlg230.html">TRLG-230</a></li>
+            <li><a href="trg300.html">TRG-300</a></li>
+          </ul>
+
+          <strong>Seyir Füzeleri / Hassas Vuruş Sistemleri</strong>
+          <ul>
+            <li><a href="som.html">SOM</a></li>
+            <li><a href="somj.html">SOM-J</a></li>
+            <li><a href="cakir.html">ÇAKIR</a></li>
+            <li><a href="iha230.html">İHA-230</a></li>
+          </ul>
+
+          <strong>Deniz Hedeflerine Karşı Füze Sistemleri</strong>
+          <ul>
+            <li><a href="atmaca.html">ATMACA</a></li>
+          </ul>
+
+          <strong>Deniz Sistemleri / Denizaltı Savunma</strong>
+          <ul>
+            <li><a href="akya.html">AKYA</a></li>
+            <li><a href="orka.html">ORKA</a></li>
+            <li><a href="dsh.html">DSH Roketi</a></li>
+          </ul>
+
+          <strong>Tanksavar Füze Sistemleri</strong>
+          <ul>
+            <li><a href="umtas.html">UMTAS</a></li>
+            <li><a href="lumtas.html">L-UMTAS</a></li>
+            <li><a href="omtas.html">OMTAS</a></li>
+            <li><a href="karaok.html">KARAOK</a></li>
+          </ul>
+
+          <strong>Hava Platformlarından Atılan Füze ve Akıllı Mühimmatlar</strong>
+          <ul>
+            <li><a href="cirit.html">CİRİT</a></li>
+            <li><a href="mete.html">METE</a></li>
+            <li><a href="mamc.html">MAM-C</a></li>
+            <li><a href="maml.html">MAM-L</a></li>
+            <li><a href="mamt.html">MAM-T</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Amatör olarak hazırlanmıştır.
+  </footer>
+
+  <script>
+    function detayGoster(id) {
+      const kutu = document.getElementById(id);
+
+      if (kutu.style.display === 'block') {
+        kutu.style.display = 'none';
+      } else {
+        kutu.style.display = 'block';
+      }
+    }
+
+    function sayfayaGit(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>

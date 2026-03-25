@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T129 ATAK</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .spec-table td {
+      padding: 10px;
+      border-bottom: 1px solid #475569;
+      vertical-align: top;
+    }
+
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec-table td:first-child {
+      color: #cbd5e1;
+      width: 35%;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-table td:first-child {
+        width: 44%;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>T129 ATAK</h1>
+    <p>Türk Silahlı Kuvvetleri için geliştirilen, yüksek manevra kabiliyeti ve çok rollü silah yükü taşıyan taarruz ve taktik keşif helikopteri.</p>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        T129 ATAK, Türk Silahlı Kuvvetlerinin taarruz helikopteri ihtiyacını karşılamak amacıyla geliştirilen,
+        Türk Havacılık ve Uzay Sanayii (TUSAŞ) ana yükleniciliğinde üretilen modern bir taarruz helikopteridir.
+        Platform; gece ve gündüz görev yapabilme, yüksek manevra kabiliyeti, sıcak hava ve yüksek irtifa
+        koşullarında etkili performans sağlamak üzere optimize edilmiştir.
+      </p>
+      <br>
+      <p>
+        T129 ATAK’ın görev ve silah sistemleri millî kabiliyetlerle geliştirilmiş olup, taarruz, silahlı keşif,
+        silahlı eskort, derin taarruz, hassas vuruş, ateş desteği, hava savunma baskısı ve şehir içi güvenlik
+        görevlerinde kullanılabilecek çok rollü bir helikopterdir.
+      </p>
+      <br>
+      <p>
+        Platform, düşük görünürlük, düşük ses ve radar izi, asimetrik silah yükü taşıyabilme ve yüksek beka
+        özellikleriyle sınıfındaki en etkili taarruz helikopterlerinden biri olarak öne çıkar.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/t129atak1.jpg" alt="T129 ATAK görsel 1" onclick="resimAc(0)">
+      <img src="images/t129atak2.jpg" alt="T129 ATAK görsel 2" onclick="resimAc(1)">
+      <img src="images/t129atak3.jpg" alt="T129 ATAK görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+
+      <table class="spec-table">
+        <tr>
+          <td>Platform Sınıfı</td>
+          <td>Taarruz ve taktik keşif helikopteri</td>
+        </tr>
+        <tr>
+          <td>Üretici</td>
+          <td>TUSAŞ / Turkish Aerospace</td>
+        </tr>
+        <tr>
+          <td>Program Rolü</td>
+          <td>Taarruz, silahlı keşif, silahlı eskort, hassas vuruş, ateş desteği</td>
+        </tr>
+        <tr>
+          <td>Mürettebat</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Uzunluk</td>
+          <td>14.54 m</td>
+        </tr>
+        <tr>
+          <td>Yükseklik</td>
+          <td>3.40 m</td>
+        </tr>
+        <tr>
+          <td>Ana Rotor Çapı</td>
+          <td>11.90 m</td>
+        </tr>
+        <tr>
+          <td>Azami Kalkış Ağırlığı (MTOW)</td>
+          <td>5065 kg</td>
+        </tr>
+        <tr>
+          <td>Motor Sayısı</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Motor Tipi</td>
+          <td>LHTEC CTS800-4A turboşaft</td>
+        </tr>
+        <tr>
+          <td>Kalkış Gücü</td>
+          <td>2 × 1024 kW / 2 × 1373 shp</td>
+        </tr>
+        <tr>
+          <td>Azami Seyir Hızı</td>
+          <td>281 km/s</td>
+        </tr>
+        <tr>
+          <td>Menzil</td>
+          <td>537 km</td>
+        </tr>
+        <tr>
+          <td>Havada Kalış</td>
+          <td>3 saat</td>
+        </tr>
+        <tr>
+          <td>HIGE Tavanı</td>
+          <td>4572 m / 15000 ft</td>
+        </tr>
+        <tr>
+          <td>HOGE Tavanı</td>
+          <td>4221 m / 13850 ft</td>
+        </tr>
+        <tr>
+          <td>Tırmanma Oranı</td>
+          <td>13.26 m/sn</td>
+        </tr>
+        <tr>
+          <td>Dikey Tırmanma Oranı</td>
+          <td>7.3 m/sn</td>
+        </tr>
+        <tr>
+          <td>Servis Tavanı</td>
+          <td>4572 m / 15000 ft</td>
+        </tr>
+        <tr>
+          <td>Optimizasyon</td>
+          <td>Sıcak hava / yüksek irtifa görevleri için optimize edilmiş performans</td>
+        </tr>
+        <tr>
+          <td>Uçuş Koşulları</td>
+          <td>Gece ve gündüz görev yapabilme</td>
+        </tr>
+        <tr>
+          <td>Manevra Kabiliyeti</td>
+          <td>Yüksek manevra kabiliyeti</td>
+        </tr>
+        <tr>
+          <td>Görünürlük Özellikleri</td>
+          <td>Düşük görünürlük, düşük ses ve radar izi</td>
+        </tr>
+        <tr>
+          <td>Beka Özellikleri</td>
+          <td>Yüksek darbe dayanımı ve balistik tolerans</td>
+        </tr>
+        <tr>
+          <td>Elektronik Harp</td>
+          <td>Radar Warning Receiver, Radar Frequency Mixer, Laser Receiver, Missile Warning ve Countermeasure sistemleri</td>
+        </tr>
+        <tr>
+          <td>Karşı Tedbirler</td>
+          <td>IR karşı tedbir ve karşı tedbir atım sistemi</td>
+        </tr>
+        <tr>
+          <td>Kaska Sistemi</td>
+          <td>HUNTER Kaska Entegre Kumanda Sistemi</td>
+        </tr>
+        <tr>
+          <td>Top Sistemi</td>
+          <td>20 mm taretli top</td>
+        </tr>
+        <tr>
+          <td>Top Mühimmatı</td>
+          <td>500 mermi</td>
+        </tr>
+        <tr>
+          <td>Tanksavar Füzesi</td>
+          <td>8 × UMTAS / L-UMTAS</td>
+        </tr>
+        <tr>
+          <td>Lazer Güdümlü Füze</td>
+          <td>16 × 70 mm CİRİT</td>
+        </tr>
+        <tr>
+          <td>Hava-Hava Füzesi</td>
+          <td>8 × STINGER</td>
+        </tr>
+        <tr>
+          <td>Roket Konfigürasyonu 1</td>
+          <td>76 × 70 mm klasik roket</td>
+        </tr>
+        <tr>
+          <td>Roket Konfigürasyonu 2</td>
+          <td>48 × 70 mm klasik roket</td>
+        </tr>
+        <tr>
+          <td>Silah Yükleme Özelliği</td>
+          <td>Asimetrik silah yükü taşıyabilme</td>
+        </tr>
+        <tr>
+          <td>Ek Yakıt Tankı</td>
+          <td>Haricî yardımcı yakıt tankı entegrasyonu</td>
+        </tr>
+        <tr>
+          <td>Ana Görev Rolleri</td>
+          <td>Attack, Armed Reconnaissance, Armed Escort, Deep Strike, Precision Strike, Fire Support, SEAD, Security / Urban Warfare</td>
+        </tr>
+        <tr>
+          <td>Öne Çıkan Özellik</td>
+          <td>Sınıfında sıcak hava-yüksek irtifa performansı ve çok rollü silah yüküyle öne çıkan modern taarruz helikopteri</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    T129 ATAK detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş T129 ATAK görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/t129atak1.jpg",
+      "images/t129atak2.jpg",
+      "images/t129atak3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim() {
+      aktifResim++;
+      if (aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim() {
+      aktifResim--;
+      if (aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e) {
+      if (e.target.id === "lightbox") {
+        this.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIZIR</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+      padding:60px 20px 40px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:42px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:35px auto;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-bottom:24px;
+      color:#93c5fd;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:16px;
+    }
+
+    .info-box{
+      background:#1e293b;
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:26px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2{
+      color:#93c5fd;
+      margin-bottom:12px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:20px;
+      margin-bottom:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 10px 24px rgba(0,0,0,0.28);
+      cursor:pointer;
+      transition:transform .25s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+      color:#cbd5e1;
+      background:#111827;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.96);
+      backdrop-filter:blur(6px);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:95vw;
+      max-height:95vh;
+      border-radius:12px;
+    }
+
+    .lightbox-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:56px;
+      color:white;
+      cursor:pointer;
+      padding:10px 18px;
+      border-radius:12px;
+      background:rgba(0,0,0,0.25);
+      user-select:none;
+    }
+
+    .lightbox-prev{left:30px;}
+    .lightbox-next{right:30px;}
+
+    @media (max-width:900px){
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .lightbox-arrow{
+        font-size:40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>HIZIR</h1>
+</header>
+
+<div class="container">
+
+  <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="info-box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      HIZIR, Katmerciler tarafından geliştirilen 4x4 mayına karşı korumalı zırhlı araçtır (MRAP).
+      Araç; kırsal ve kentsel alanlardaki yoğun çatışma koşullarında yüksek performans gösterecek
+      şekilde optimize edilmiştir.
+    </p>
+
+    <br>
+
+    <p>
+      Katmerciler’in ürün tanıtımında HIZIR; yüksek balistik ve mayın korumasına sahip, çevik,
+      dinamik, çok yönlü, bakımı kolay ve farklı görev konfigürasyonlarına uygun bir platform
+      olarak tanımlanır.
+    </p>
+
+    <br>
+
+    <p>
+      Platform; muharebe aracı, komuta-kontrol aracı, KBRN aracı, silah taşıyıcı,
+      ambulans, sınır güvenlik aracı ve keşif aracı gibi farklı görevlere uyarlanabilmektedir.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/hizir1.jpg" alt="HIZIR görsel 1" onclick="resimAc(0)">
+    <img src="images/hizir2.jpg" alt="HIZIR görsel 2" onclick="resimAc(1)">
+    <img src="images/hizir3.jpg" alt="HIZIR görsel 3" onclick="resimAc(2)">
+  </div>
+
+  <div class="info-box">
+    <h2>Teknik Özellikler</h2>
+
+    <table style="width:100%;border-collapse:collapse;background:#0f172a;border-radius:10px;overflow:hidden;">
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Araç Sınıfı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">4x4 Mayına Karşı Korumalı Zırhlı Araç (MRAP)</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Üretici</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Katmerciler</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Personel Kapasitesi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">9 personel</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Gövde Yapısı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">MRAP tasarım felsefesinde zırhlı gövde</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Balistik Koruma</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Yüksek balistik koruma seviyesi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Mayın Koruması</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Yüksek mayın koruma seviyesi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Görev Tipleri</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Muharebe, komuta-kontrol, KBRN, silah taşıyıcı, ambulans, sınır güvenlik, keşif</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Silah Sistemi Entegrasyonu</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Çeşitli silah sistemlerinin kolay entegrasyonuna uygun</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Silah İstasyonu</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Manuel veya uzaktan komutalı silah sistemi uygulanabilir</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Lastik Yapısı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Run-flat lastikler</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Merkezi Lastik Şişirme Sistemi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">CTIS</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Direksiyon Sistemi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Hidrolik destekli güç direksiyonu</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Bakım Özelliği</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Kolay, hızlı ve düşük maliyetli bakım</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">CBRN Koruma</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Kimyasal, biyolojik, radyolojik ve nükleer koruma sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">İç Haberleşme</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">İnterkom sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Telsiz Altyapısı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Radyo sistemi altyapısı</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Araç Kameraları</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Ön ve arka kamera</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Görüş Sistemleri</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Gündüz / gece görüş sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Sürücü Görüş Desteği</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">360° sürücü görüş iyileştirme sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Kendini Kurtarma Sistemi</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Kendini kurtarma vinci</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Duman Havanı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Duman bombası lançeri</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Aydınlatma</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Black-out ışık sistemi</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Yakıt Tankı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Patlamaya dayanıklı ve delinmeye dirençli</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">İç Ortam Donanımı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Barut gazı tahliye fanları</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">Elektrik Desteği</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Araç içine entegre redresör</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #475569;color:#cbd5e1;">HIZIR II’den Farkı</td>
+        <td style="padding:10px;border-bottom:1px solid #475569;">Temel HIZIR 9 personel taşırken HIZIR II versiyonunda kapasite 14 kişiye kadar çıkarılmıştır</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;color:#cbd5e1;">HIZIR II’de Ek İyileştirmeler</td>
+        <td style="padding:10px;">Rampa tipi arka kapı, tek parça ön cam, geliştirilmiş klima, yüz yüze oturma düzeni, büyütülmüş yakıt deposu</td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  HIZIR detay sayfası • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+  <img id="lightbox-img" alt="Büyütülmüş HIZIR görseli">
+  <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+</div>
+
+<script>
+  const resimler = [
+    "images/hizir1.jpg",
+    "images/hizir2.jpg",
+    "images/hizir3.jpg"
+  ];
+
+  let aktifResim = 0;
+
+  function resimAc(index){
+    aktifResim = index;
+    document.getElementById("lightbox-img").src = resimler[index];
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function sonrakiResim(){
+    aktifResim++;
+    if(aktifResim >= resimler.length) aktifResim = 0;
+    document.getElementById("lightbox-img").src = resimler[aktifResim];
+  }
+
+  function oncekiResim(){
+    aktifResim--;
+    if(aktifResim < 0) aktifResim = resimler.length - 1;
+    document.getElementById("lightbox-img").src = resimler[aktifResim];
+  }
+
+  document.getElementById("lightbox").onclick = function(e){
+    if(e.target.id === "lightbox"){
+      this.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

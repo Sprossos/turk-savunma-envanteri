@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HİSAR-RF Hava Savunma Füze Sistemi</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,#111827,#1e3a8a,#334155);
+  padding:70px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:44px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:40px auto;
+}
+
+.back{
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  margin-bottom:25px;
+}
+
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.box h2{
+  color:#93c5fd;
+  margin-bottom:12px;
+}
+
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.spec-card{
+  background:#0f172a;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.spec-card h3{
+  color:#60a5fa;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:0 10px 24px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+  background:#0f172a;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+td{
+  padding:10px;
+  border-bottom:1px solid #475569;
+  vertical-align:top;
+}
+
+tr:last-child td{
+  border-bottom:none;
+}
+
+td:first-child{
+  color:#cbd5e1;
+  width:40%;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111827;
+  margin-top:50px;
+  color:#cbd5e1;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:60px;
+  color:white;
+  cursor:pointer;
+  user-select:none;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(0,0,0,0.2);
+}
+
+.arrow:hover{
+  color:#60a5fa;
+  background:rgba(37,99,235,0.25);
+}
+
+.prev{
+  left:30px;
+}
+
+.next{
+  right:30px;
+}
+
+@media(max-width:900px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .arrow{
+    font-size:40px;
+    padding:10px;
+  }
+
+  .prev{
+    left:10px;
+  }
+
+  .next{
+    right:10px;
+  }
+
+  td:first-child{
+    width:46%;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>HİSAR-RF</h1>
+  <p>RF Arayıcı Başlıklı Orta İrtifa Hava Savunma Füzesi</p>
+</header>
+
+<div class="container">
+
+  <a class="back" href="index.html ">← Ana sayfaya dön</a>
+
+  <div class="box">
+    <h2>Genel Bilgi</h2>
+
+    <p>
+      HİSAR-RF, HİSAR orta irtifa hava savunma ailesi içinde RF arayıcı başlık kullanan füze
+      çözümüdür. Orta irtifa hava savunma görevlerinde; sabit kanatlı ve döner kanatlı hava
+      platformları, seyir füzeleri, havadan karaya füzeler ve İHA’lara karşı kullanılmak üzere
+      geliştirilmiştir.
+    </p>
+
+    <br>
+
+    <p>
+      Sistem yaklaşımında hedef tespit, takip, komuta kontrol ve füze lançer unsurları entegre
+      çalışır. RF arayıcı başlık kullanımı, özellikle terminal safhada hedefe hassas yönelim ve
+      önleme kabiliyetini güçlendirir.
+    </p>
+
+    <br>
+
+    <p>
+      HİSAR-RF; dikey atış yapısı, 360 derece angajman yaklaşımı, çoklu angajman desteği ve
+      katmanlı hava savunma içinde kullanılabilen mimarisiyle modern hava savunma ihtiyaçlarına
+      cevap vermek üzere tasarlanmıştır.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Temel Özellikler</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Menzil</h3>
+        <p>25+ km</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>İrtifa</h3>
+        <p>15+ km</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Uzunluk</h3>
+        <p>4.6 m</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Çap</h3>
+        <p>185 mm</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Terminal Güdüm</h3>
+        <p>RF Arayıcı Başlık</p>
+      </div>
+
+      <div class="spec-card">
+        <h3>Atış Yapısı</h3>
+        <p>Dikey / 360°</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Teknik Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Füze Tipi</td>
+        <td>Orta irtifa hava savunma füzesi</td>
+      </tr>
+
+      <tr>
+        <td>Adı</td>
+        <td>HİSAR-RF / HİSAR-O (RF)</td>
+      </tr>
+
+      <tr>
+        <td>Görev Alanı</td>
+        <td>Orta irtifa hava savunması, üs ve tesis savunması, birlik hava savunması</td>
+      </tr>
+
+      <tr>
+        <td>Hedef Türleri</td>
+        <td>Sabit kanatlı uçaklar, döner kanatlı uçaklar, seyir füzeleri, İHA’lar ve havadan karaya füzeler</td>
+      </tr>
+
+      <tr>
+        <td>Azami Önleme Menzili</td>
+        <td>25+ km</td>
+      </tr>
+
+      <tr>
+        <td>Azami Önleme İrtifası</td>
+        <td>15+ km</td>
+      </tr>
+
+      <tr>
+        <td>Füze Uzunluğu</td>
+        <td>4.6 m</td>
+      </tr>
+
+      <tr>
+        <td>Füze Çapı</td>
+        <td>185 mm</td>
+      </tr>
+
+      <tr>
+        <td>İlk Yönelim</td>
+        <td>İlk yönelim güdümü</td>
+      </tr>
+
+      <tr>
+        <td>Ara Safha Güdüm</td>
+        <td>Ataletsel seyrüsefer ve veri bağı</td>
+      </tr>
+
+      <tr>
+        <td>Terminal Güdüm</td>
+        <td>RF arayıcı başlık</td>
+      </tr>
+
+      <tr>
+        <td>Harp Başlığı</td>
+        <td>Yüksek infilaklı parçacık etkili</td>
+      </tr>
+
+      <tr>
+        <td>Motor</td>
+        <td>Çift darbeli katı yakıtlı roket motoru</td>
+      </tr>
+
+      <tr>
+        <td>Tapa Yapısı</td>
+        <td>Çarpma ve yaklaşma tapa</td>
+      </tr>
+
+      <tr>
+        <td>Yönlendirme</td>
+        <td>İtki vektör kontrol sistemi</td>
+      </tr>
+
+      <tr>
+        <td>Atış Yapısı</td>
+        <td>Dikey atış kabiliyeti ile 360° tehdit imha yaklaşımı</td>
+      </tr>
+
+      <tr>
+        <td>Platform Uyumu</td>
+        <td>Tekerlekli ve paletli kara araçları ile deniz araçları</td>
+      </tr>
+
+      <tr>
+        <td>Kanister / Arayüz</td>
+        <td>Ortak kanister ve göbek bağı arayüzü mimarisi</td>
+      </tr>
+
+      <tr>
+        <td>Angajman Yapısı</td>
+        <td>Çoklu angajman ve ardışık ateşleme</td>
+      </tr>
+
+      <tr>
+        <td>Görev Koşulları</td>
+        <td>Gece-gündüz ve olumsuz hava koşullarında görev yapabilme</td>
+      </tr>
+
+      <tr>
+        <td>Dost-Düşman Tanıma</td>
+        <td>IFF entegrasyonu</td>
+      </tr>
+
+      <tr>
+        <td>Entegre Hava Resmi</td>
+        <td>Komuta kontrol altyapısı ile entegre hava resmi üretimi</td>
+      </tr>
+
+      <tr>
+        <td>Öne Çıkan Özellik</td>
+        <td>RF terminal güdüm, dikey atış ve 360 derece koruma yaklaşımını birleştiren yerli orta irtifa füze çözümü</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Sistem ve Operasyonel Özellikler</h2>
+
+    <table>
+      <tr>
+        <td>Sistem Mim arisi</td>
+        <td>Dağıtık ve esnek hava savunma mimarisi</td>
+      </tr>
+
+      <tr>
+        <td>Komuta Kontrol</td>
+        <td>Gelişmiş atış kontrol ve komuta kontrol altyapısı</td>
+      </tr>
+
+      <tr>
+        <td>Kullanım Şekli</td>
+        <td>Batarya ve takım seviyesinde entegre kullanım</td>
+      </tr>
+
+      <tr>
+        <td>Hava Savunma Katmanı</td>
+        <td>Orta irtifa katmanında önleme</td>
+      </tr>
+
+      <tr>
+        <td>Entegrasyon Kabiliyeti</td>
+        <td>IIR ve RF füze kullanan lançer mimarileriyle birlikte görev yapabilme</td>
+      </tr>
+
+      <tr>
+        <td>Uzaktan Kontrol</td>
+        <td>Uzaktan kontrol ve dağınık konuşlanma desteği</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Görseller</h2>
+
+    <div class="gallery">
+      <img src="images/hisarrf1.jpg" alt="HİSAR-RF görsel 1" onclick="openImg(0)">
+      <img src="images/hisarrf2.jpg" alt="HİSAR-RF görsel 2" onclick="openImg(1)">
+      <img src="images/hisarrf3.jpg" alt="HİSAR-RF görsel 3" onclick="openImg(2)">
+    </div>
+  </div>
+
+</div>
+
+<footer>
+HİSAR-RF Hava Savunma Sistemi • Türk Savunma Sanayii Envanteri
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="arrow prev" onclick="prevImg()">❮</span>
+  <img id="lightbox-img" alt="Büyütülmüş HİSAR-RF görseli">
+  <span class="arrow next" onclick="nextImg()">❯</span>
+</div>
+
+<script>
+const images = [
+  "images/hisarrf1.jpg",
+  "images/hisarrf2.jpg",
+  "images/hisarrf3.jpg"
+];
+
+let index = 0;
+
+function openImg(i){
+  index = i;
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function nextImg(){
+  index++;
+  if(index >= images.length){
+    index = 0;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+function prevImg(){
+  index--;
+  if(index < 0){
+    index = images.length - 1;
+  }
+  document.getElementById("lightbox-img").src = images[index];
+}
+
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    this.style.display = "none";
+  }
+}
+
+document.addEventListener("keydown", function(e){
+  const lightbox = document.getElementById("lightbox");
+  if(lightbox.style.display === "flex"){
+    if(e.key === "ArrowRight") nextImg();
+    if(e.key === "ArrowLeft") prevImg();
+    if(e.key === "Escape") lightbox.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

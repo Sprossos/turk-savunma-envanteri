@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ILGAZ 4x4</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .spec-table td {
+      padding: 10px;
+      border-bottom: 1px solid #475569;
+      vertical-align: top;
+    }
+
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec-table td:first-child {
+      color: #cbd5e1;
+      width: 36%;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-table td:first-child {
+        width: 44%;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ILGAZ 4x4</h1>
+    <p>Nurol Makina tarafından geliştirilen, iç güvenlik ve çok amaçlı görevler için tasarlanmış 4x4 zırhlı araç platformu.</p>
+  </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        ILGAZ 4x4, Nurol Makina tarafından geliştirilen iç güvenlik ve çok amaçlı zırhlı araç ailesidir.
+        Platform; hem kırsal hem de şehir ortamında görev yapabilecek şekilde kompakt boyut, yüksek
+        koruma ve görev esnekliği sunar.
+      </p>
+      <br>
+      <p>
+        Nurol Makina ürün tanıtımlarında ILGAZ-II 4x4; ambulans, tanksavar aracı, muharebe aracı,
+        komuta-kontrol aracı, keşif-gözetleme aracı, terörle mücadele aracı, iç güvenlik aracı ve
+        olay yeri inceleme aracı gibi çok sayıda göreve uyarlanabilen modüler bir platform olarak sunulmaktadır.
+      </p>
+      <br>
+      <p>
+        Araçta 5 kapılı yapı, run-flat lastikler, gündüz/gece görev destek sistemleri, hızlı bakım
+        kolaylığı ve ergonomik iç yerleşim öne çıkan tasarım unsurları arasındadır.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/ilgaz1.jpg" alt="ILGAZ 4x4 görsel 1" onclick="resimAc(0)">
+      <img src="images/ilgaz2.jpg" alt="ILGAZ 4x4 görsel 2" onclick="resimAc(1)">
+      <img src="images/ilgaz3.jpg" alt="ILGAZ 4x4 görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+
+      <table class="spec-table">
+        <tr>
+          <td>Araç Sınıfı</td>
+          <td>4x4 iç güvenlik / çok amaçlı taktik zırhlı araç</td>
+        </tr>
+        <tr>
+          <td>Üretici</td>
+          <td>Nurol Makina</td>
+        </tr>
+        <tr>
+          <td>Araç Ailesi</td>
+          <td>ILGAZ-II 4x4</td>
+        </tr>
+        <tr>
+          <td>Tasarım Kategorisi</td>
+          <td>6 ton sınıfı kompakt taktik araç yaklaşımı</td>
+        </tr>
+        <tr>
+          <td>Kapı Düzeni</td>
+          <td>5 kapılı yapı</td>
+        </tr>
+        <tr>
+          <td>Ateş Mazgalı</td>
+          <td>2 farklı ateş mazgalı</td>
+        </tr>
+        <tr>
+          <td>Lastik Tipi</td>
+          <td>Run-flat lastikler</td>
+        </tr>
+        <tr>
+          <td>Sürüş Modları</td>
+          <td>4x4 ve 4x2 sürüş modları (4x2 devre dışı bırakılabilir)</td>
+        </tr>
+        <tr>
+          <td>Diferansiyel</td>
+          <td>Merkezi diferansiyel kilitleri</td>
+        </tr>
+        <tr>
+          <td>Şanzıman</td>
+          <td>Otomatik transmisyon</td>
+        </tr>
+        <tr>
+          <td>Fren Sistemi</td>
+          <td>ABS</td>
+        </tr>
+        <tr>
+          <td>Direksiyon Sistemi</td>
+          <td>Güç destekli direksiyon</td>
+        </tr>
+        <tr>
+          <td>Süspansiyon</td>
+          <td>Helezon yay ve amortisör / bağımsız görev odaklı düzen</td>
+        </tr>
+        <tr>
+          <td>Azami Hız</td>
+          <td>Yüksek yol hızı; kompakt platform sınıfında yüksek hareket kabiliyeti</td>
+        </tr>
+        <tr>
+          <td>Sudan Geçiş</td>
+          <td>0.75 m</td>
+        </tr>
+        <tr>
+          <td>Tırmanma Kabiliyeti</td>
+          <td>%60</td>
+        </tr>
+        <tr>
+          <td>Yan Eğim</td>
+          <td>%30</td>
+        </tr>
+        <tr>
+          <td>Dik Engel Aşma</td>
+          <td>0.4 m</td>
+        </tr>
+        <tr>
+          <td>Hendek Geçişi</td>
+          <td>0.9 m</td>
+        </tr>
+        <tr>
+          <td>Çalışma Sıcaklığı</td>
+          <td>-32°C ile +55°C</td>
+        </tr>
+        <tr>
+          <td>Bakım Özelliği</td>
+          <td>Hızlı ve kolay bakım</td>
+        </tr>
+        <tr>
+          <td>İç Yerleşim</td>
+          <td>Ergonomik oturma düzeni</td>
+        </tr>
+        <tr>
+          <td>Operasyon Yeteneği</td>
+          <td>Kırsal ve kentsel bölgelerde görev yapmaya uygun</td>
+        </tr>
+        <tr>
+          <td>Ön / Arka Kamera</td>
+          <td>Ön ve arka kamera sistemleri</td>
+        </tr>
+        <tr>
+          <td>Gece / Gündüz Görüş</td>
+          <td>Gece ve gündüz görüş sistemleri</td>
+        </tr>
+        <tr>
+          <td>Kendini Kurtarma</td>
+          <td>Kendini kurtarma vinci</td>
+        </tr>
+        <tr>
+          <td>Uzak Menzilli Akustik Sistem</td>
+          <td>Opsiyonel / görev bazlı entegrasyon</td>
+        </tr>
+        <tr>
+          <td>Yükseltilebilir Kamera Sistemi</td>
+          <td>Opsiyonel yönlendirilebilir kamera sistemi</td>
+        </tr>
+        <tr>
+          <td>Duman Lançeri</td>
+          <td>Duman bombası lançerleri</td>
+        </tr>
+        <tr>
+          <td>Projektör ve Anons Sistemi</td>
+          <td>Görev konfigürasyonuna bağlı entegrasyon</td>
+        </tr>
+        <tr>
+          <td>Görev Varyantları</td>
+          <td>Ambulans, tanksavar, muharebe, komuta-kontrol, keşif-gözetleme, terörle mücadele, iç güvenlik, olay yeri inceleme</td>
+        </tr>
+        <tr>
+          <td>Öne Çıkan Özellik</td>
+          <td>Kompakt boyut, şehir içi manevra kabiliyeti ve çok rollü görev ailesi</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    ILGAZ 4x4 detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim()">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş ILGAZ 4x4 görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim()">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/ilgaz1.jpg",
+      "images/ilgaz2.jpg",
+      "images/ilgaz3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      document.getElementById("lightbox-img").src = resimler[index];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function sonrakiResim() {
+      aktifResim++;
+      if (aktifResim >= resimler.length) aktifResim = 0;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim() {
+      aktifResim--;
+      if (aktifResim < 0) aktifResim = resimler.length - 1;
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").onclick = function(e) {
+      if (e.target.id === "lightbox") {
+        this.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

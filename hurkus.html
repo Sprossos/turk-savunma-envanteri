@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HÜRKUŞ</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a, #334155);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 35px auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .info-box h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      cursor: pointer;
+      transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(37,99,235,0.75);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-arrow {
+        font-size: 40px;
+        padding: 8px 14px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HÜRKUŞ</h1>
+      </header>
+
+  <div class="container">
+    <a class="back-link" href="index.html ">← Ana sayfaya dön</a>
+
+    <div class="info-box">
+      <h2>Genel Bilgi</h2>
+      <p>
+        HÜRKUŞ, Türk Havacılık ve Uzay Sanayii tarafından geliştirilen turboprop motorlu eğitim uçağı ailesidir.
+        Platform, temel eğitim, ileri eğitim ve bazı varyantlarda hafif taarruz / silahlı görev ihtiyaçlarını
+        karşılamak amacıyla geliştirilmiştir.
+      </p>
+      <br>
+      <p>
+        HÜRKUŞ programı, Türkiye'nin pilot eğitim altyapısını güçlendirmek ve eğitim uçağı alanında yerli bir çözüm
+        üretmek amacıyla hayata geçirilmiştir. Uçak, modern aviyonikler, sayısal kokpit yapısı ve eğitim görevlerine
+        uygun uçuş karakteristiği ile öne çıkar.
+      </p>
+      <br>
+      <p>
+        HÜRKUŞ ailesi, farklı görev ihtiyaçlarına göre şekillenen varyantlarıyla hem eğitim hem de hafif operasyonel
+        kullanım için önemli bir yerli havacılık platformudur.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/hurkus1.jpg" alt="HÜRKUŞ görsel 1" onclick="resimAc(0)">
+      <img src="images/hurkus2.jpg" alt="HÜRKUŞ görsel 2" onclick="resimAc(1)">
+      <img src="images/hurkus3.jpg" alt="HÜRKUŞ görsel 3" onclick="resimAc(2)">
+    </div>
+
+    <div class="info-box">
+      <h2>Teknik Özellikler</h2>
+      <table style="width:100%; border-collapse:collapse; background:#0f172a; border-radius:10px; overflow:hidden;">
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Sınıf</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Temel Eğitim / Hafif Taarruz Uçağı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Üretici</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">TUSAŞ</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menşei</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Türkiye</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Mürettebat</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">2</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Motor</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">1 × turboprop motor</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Azami Hız</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 570 km/s</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Menzil</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 1.400+ km</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Servis Tavanı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 10.500 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Uzunluk</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 11 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Kanat Açıklığı</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Yaklaşık 9.5 m</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Aviyonik</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Sayısal kokpit / modern görev bilgisayarı</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border-bottom:1px solid #475569; color:#cbd5e1;">Görev Rolü</td>
+          <td style="padding:10px; border-bottom:1px solid #475569;">Temel eğitim, ileri eğitim, hafif operasyonel görevler</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; color:#cbd5e1;">Varyantlar</td>
+          <td style="padding:10px;">HÜRKUŞ-A / HÜRKUŞ-B / HÜRKUŞ-C</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    HÜRKUŞ detay sayfası • Türk Savunma Sanayii Envanteri
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-arrow lightbox-prev" onclick="oncekiResim(event)">❮</div>
+    <img id="lightbox-img" alt="Büyütülmüş HÜRKUŞ görseli">
+    <div class="lightbox-arrow lightbox-next" onclick="sonrakiResim(event)">❯</div>
+  </div>
+
+  <script>
+    const resimler = [
+      "images/hurkus1.jpg",
+      "images/hurkus2.jpg",
+      "images/hurkus3.jpg"
+    ];
+
+    let aktifResim = 0;
+
+    function resimAc(index) {
+      aktifResim = index;
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function kapat() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function sonrakiResim(event) {
+      event.stopPropagation();
+      aktifResim++;
+      if (aktifResim >= resimler.length) {
+        aktifResim = 0;
+      }
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    function oncekiResim(event) {
+      event.stopPropagation();
+      aktifResim--;
+      if (aktifResim < 0) {
+        aktifResim = resimler.length - 1;
+      }
+      document.getElementById("lightbox-img").src = resimler[aktifResim];
+    }
+
+    document.getElementById("lightbox").addEventListener("click", function(e) {
+      if (e.target.id === "lightbox") {
+        kapat();
+      }
+    });
+  </script>
+</body>
+</html>
