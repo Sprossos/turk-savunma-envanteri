@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri | Türkiye Savunma Envanteri</title>
+  <style>
+    :root {
+      --bg-main: #020617;
+      --bg-surface: #0f172a;
+      --card: #111f34;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-soft: #94a3b8;
+      --accent: #3b82f6;
+      --border: rgba(148, 163, 184, 0.24);
+      --shadow: 0 14px 30px rgba(2, 6, 23, 0.35);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at 20% 0%, #132443 0%, var(--bg-main) 52%);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(2, 6, 23, 0.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .menu { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .menu a:hover,
+    .menu a:focus-visible,
+    .menu a.active {
+      color: var(--text-main);
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(147, 197, 253, 0.38);
+      outline: none;
+    }
+
+    header {
+      text-align: center;
+      padding: 74px 20px 42px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 42%, #334155 100%);
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: clamp(1rem, 2.3vw, 1.1rem);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 32px auto 44px;
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 3.2vw, 1.8rem);
+      margin-bottom: 6px;
+      color: #dbeafe;
+    }
+
+    .section-note {
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .gallery-strip {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(148, 163, 184, 0.45) rgba(15, 23, 42, 0.4);
+    }
+
+    .gallery-strip::-webkit-scrollbar { height: 8px; }
+    .gallery-strip::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.45);
+      border-radius: 999px;
+    }
+
+    .track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(260px, 1fr);
+      gap: 14px;
+      padding-bottom: 4px;
+    }
+
+    .photo-card {
+      scroll-snap-align: start;
+      background: linear-gradient(180deg, rgba(17, 31, 52, 0.96), rgba(15, 23, 42, 0.96));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 250px;
+    }
+
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .photo-card figcaption {
+      padding: 10px 12px 12px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--text-soft);
+      border-top: 1px solid var(--border);
+      background: rgba(2, 6, 23, 0.95);
+      font-size: 14px;
+    }
+
+    @media (min-width: 980px) {
+      .gallery-strip {
+        overflow: visible;
+      }
+
+      .track {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .menu a {
+        font-size: 13px;
+        padding: 7px 10px;
+      }
+
+      header {
+        padding: 60px 16px 36px;
+      }
+
+      .container {
+        width: 92%;
+        margin-top: 24px;
+      }
+
+      .track {
+        grid-auto-columns: 86%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Türkiye Savunma Envanteri</a>
+      <div class="menu">
+        <a href="index.html">Ana Sayfa</a>
+        <a class="active" href="galeri.html">Galeri</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Sistem Galerisi</h1>
+    <p>Envanterdeki platformlardan seçili görseller. Mobilde sağa-sola kaydırarak gezebilirsiniz.</p>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Araç ve Sistem Fotoğrafları</h2>
+    <p class="section-note">Sadece depodaki mevcut görseller kullanılmıştır.</p>
+
+    <section class="gallery-strip" aria-label="Savunma sistemleri galerisi">
+      <div class="track">
+        <figure class="photo-card"><img src="images/altay1.jpg" alt="ALTAY tankı"><figcaption>ALTAY</figcaption></figure>
+        <figure class="photo-card"><img src="images/t129atak1.jpg" alt="T129 ATAK"><figcaption>T129 ATAK</figcaption></figure>
+        <figure class="photo-card"><img src="images/anka1.jpg" alt="ANKA"><figcaption>ANKA</figcaption></figure>
+        <figure class="photo-card"><img src="images/akinci1.jpg" alt="Bayraktar AKINCI"><figcaption>Bayraktar AKINCI</figcaption></figure>
+        <figure class="photo-card"><img src="images/pars8x8_1.jpg" alt="PARS 8x8"><figcaption>PARS 8x8</figcaption></figure>
+        <figure class="photo-card"><img src="images/cobra2_1.jpg" alt="COBRA II"><figcaption>COBRA II</figcaption></figure>
+        <figure class="photo-card"><img src="images/atmaca1.jpg" alt="ATMACA"><figcaption>ATMACA</figcaption></figure>
+        <figure class="photo-card"><img src="images/siper1.jpg" alt="SİPER"><figcaption>SİPER</figcaption></figure>
+        <figure class="photo-card"><img src="images/tcgistanbul1.jpg" alt="TCG İstanbul"><figcaption>TCG İstanbul</figcaption></figure>
+        <figure class="photo-card"><img src="images/heybeliada1.jpg" alt="TCG Heybeliada"><figcaption>TCG Heybeliada</figcaption></figure>
+        <figure class="photo-card"><img src="images/gokbey1.jpg" alt="T625 GÖKBEY"><figcaption>T625 GÖKBEY</figcaption></figure>
+        <figure class="photo-card"><img src="images/kaplan1.jpg" alt="KAPLAN"><figcaption>KAPLAN</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Amatör olarak hazırlanmıştır.
+  </footer>
+</body>
+</html>
