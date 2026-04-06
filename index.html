@@ -76,7 +76,7 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      transition: color 0.2s ease, background-color 0.2s ease;
+      transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid transparent;
@@ -164,27 +164,31 @@
 
     .hero-buttons button,
     .detail-button {
-      border: 1px solid transparent;
-      padding: 11px 16px;
+      border: 1px solid rgba(147, 197, 253, 0.34);
+      padding: 10px 15px;
       border-radius: var(--radius-md);
       cursor: pointer;
       font-weight: 700;
       letter-spacing: 0.01em;
       font-size: 14px;
+      transition: transform 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .primary-btn {
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-      color: white;
-      box-shadow: 0 8px 18px rgba(37,99,235,0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.98), rgba(37, 99, 235, 0.92));
+      color: #eef6ff;
+      box-shadow: 0 8px 18px rgba(37,99,235,0.26);
     }
 
     .primary-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(37,99,235,0.35);
-      opacity: 0.98;
-      border-color: rgba(191, 219, 254, 0.45);
+      box-shadow: 0 10px 22px rgba(37,99,235,0.32);
+      border-color: rgba(191, 219, 254, 0.58);
+    }
+
+    .primary-btn:active {
+      transform: translateY(0) scale(0.99);
     }
 
     .container {
@@ -244,17 +248,20 @@
 
     .detail-button {
       margin-top: 15px;
-      background: transparent;
-      color: #bfdbfe;
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.16), rgba(37, 99, 235, 0.12));
+      color: #dbeafe;
       border-color: rgba(147, 197, 253, 0.35);
-      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
     }
 
     .detail-button:hover {
       transform: translateY(-1px);
-      background: rgba(59, 130, 246, 0.14);
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.22), rgba(37, 99, 235, 0.18));
       border-color: rgba(147, 197, 253, 0.62);
       color: #dbeafe;
+    }
+
+    .detail-button:active {
+      transform: translateY(0) scale(0.99);
     }
 
     .detail-box {
@@ -369,6 +376,12 @@
         font-size: 13px;
       }
 
+      .hero-buttons button,
+      .detail-button {
+        width: 100%;
+        min-height: 42px;
+      }
+
       header {
         padding: 70px 16px 56px;
       }
@@ -394,6 +407,7 @@
       <a class="brand" href="index.html">Türkiye Savunma Envanteri</a>
       <div class="menu">
         <a href="index.html">Ana Sayfa</a>
+        <a href="galeri.html">Galeri</a>
         <a href="#sistemler">Sistemler</a>
       </div>
     </div>

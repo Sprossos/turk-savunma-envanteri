@@ -5,28 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TUSAŞ AKSUNGUR</title>
 
-  <style>
+    <style>
     :root {
       --bg-main: #020617;
       --bg-surface: #0f172a;
       --bg-card: #111f34;
-      --bg-card-soft: #17253d;
       --text-main: #f8fafc;
       --text-muted: #cbd5e1;
       --text-soft: #94a3b8;
       --accent: #3b82f6;
-      --accent-soft: #93c5fd;
+      --accent-2: #2563eb;
       --border: rgba(148, 163, 184, 0.24);
-      --shadow: 0 14px 30px rgba(2, 6, 23, 0.35);
+      --shadow: 0 12px 26px rgba(2, 6, 23, 0.36);
       --radius-lg: 18px;
       --radius-md: 12px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -64,13 +59,10 @@
       color: var(--text-muted);
       font-weight: 600;
       text-decoration: none;
+      white-space: nowrap;
     }
 
-    .menu {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .menu { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .menu a {
       color: var(--text-muted);
@@ -80,13 +72,56 @@
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid transparent;
-      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
     }
 
-    .menu a:hover {
+    .menu a:hover,
+    .menu a:focus-visible {
       color: var(--text-main);
-      background: rgba(59, 130, 246, 0.14);
-      border-color: rgba(147, 197, 253, 0.35);
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(147, 197, 253, 0.42);
+      outline: none;
+    }
+
+    button,
+    .back-link,
+    .back,
+    .button,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      border: 1px solid rgba(147, 197, 253, 0.34);
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.16), rgba(37, 99, 235, 0.12));
+      color: #dbeafe;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: transform 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover,
+    .back-link:hover,
+    .back:hover,
+    .button:hover,
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(191, 219, 254, 0.6);
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.22), rgba(37, 99, 235, 0.18));
+    }
+
+    button:active,
+    .back-link:active,
+    .back:active,
+    .button:active,
+    .btn:active {
+      transform: translateY(0) scale(0.99);
     }
 
     header {
@@ -116,29 +151,11 @@
       margin: 34px auto;
     }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 24px;
-      color: #dbeafe;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      background: rgba(59, 130, 246, 0.15);
-      border: 1px solid rgba(147, 197, 253, 0.38);
-      border-radius: var(--radius-md);
-      padding: 9px 13px;
-      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    }
+    .back-link,
+    .back { margin-bottom: 24px; }
 
-    .back-link:hover {
-      background: rgba(59, 130, 246, 0.24);
-      border-color: rgba(191, 219, 254, 0.55);
-      transform: translateY(-1px);
-    }
-
-    .info-box {
+    .info-box,
+    .box {
       background: linear-gradient(180deg, rgba(17, 31, 52, 0.96), rgba(15, 23, 42, 0.96));
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
@@ -147,16 +164,33 @@
       box-shadow: var(--shadow);
     }
 
-    .info-box h2 {
+    .info-box h2,
+    .box h2 {
       color: #dbeafe;
       margin-bottom: 12px;
       font-size: 1.35rem;
       letter-spacing: -0.01em;
     }
 
-    .info-box p {
-      color: var(--text-muted);
+    .info-box p,
+    .box p { color: var(--text-muted); }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 6px;
     }
+
+    .spec {
+      background: rgba(30, 58, 138, 0.15);
+      border: 1px solid rgba(147, 197, 253, 0.23);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .spec h3 { font-size: 14px; color: #cfe4ff; margin-bottom: 4px; }
+    .spec p { font-size: 14px; color: var(--text-muted); }
 
     .gallery {
       display: grid;
@@ -191,21 +225,16 @@
       overflow: hidden;
     }
 
-    td,
-    th {
+    td, th {
       padding: 11px !important;
       border-bottom: 1px solid rgba(148, 163, 184, 0.3) !important;
       vertical-align: top;
       font-size: 14px;
     }
 
-    tr:last-child td,
-    tr:last-child th {
-      border-bottom: none !important;
-    }
+    tr:last-child td, tr:last-child th { border-bottom: none !important; }
 
-    td:first-child,
-    th:first-child {
+    td:first-child, th:first-child {
       color: #cbd5e1 !important;
       width: min(38%, 300px);
       font-weight: 600;
@@ -264,18 +293,11 @@
       transform: translateY(-50%) scale(1.02);
     }
 
-    .lightbox-prev {
-      left: 22px;
-    }
-
-    .lightbox-next {
-      right: 22px;
-    }
+    .lightbox-prev { left: 22px; }
+    .lightbox-next { right: 22px; }
 
     @media (max-width: 980px) {
-      .gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 760px) {
@@ -290,36 +312,27 @@
         padding: 7px 10px;
       }
 
-      header {
-        padding: 62px 16px 44px;
+      button,
+      .back-link,
+      .back,
+      .button,
+      .btn {
+        width: 100%;
+        min-height: 42px;
       }
 
-      .container {
-        width: 92%;
-        margin-top: 26px;
-      }
-
-      .info-box {
-        padding: 18px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
+      header { padding: 62px 16px 44px; }
+      .container { width: 92%; margin-top: 26px; }
+      .info-box, .box { padding: 18px; }
+      .gallery { grid-template-columns: 1fr; gap: 14px; }
 
       .lightbox-arrow {
         font-size: 34px;
         padding: 8px 12px;
       }
 
-      .lightbox-prev {
-        left: 10px;
-      }
-
-      .lightbox-next {
-        right: 10px;
-      }
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
     }
   </style>
 </head>
@@ -330,6 +343,7 @@
       <a class="brand" href="index.html">Türkiye Savunma Envanteri</a>
       <div class="menu">
         <a href="index.html">Ana Sayfa</a>
+        <a href="galeri.html">Galeri</a>
       </div>
     </div>
   </nav>
